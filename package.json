@@ -5,11 +5,25 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/language/**/*.json\""
   },
   "dependencies": {
+    "@mayasabha/ckeditor4-vue3": "^0.0.6",
+    "@mdi/font": "^7.1.96",
+    "@vuepic/vue-datepicker": "^3.6.5",
+    "axios": "^1.2.2",
+    "bootstrap": "^5.0.1",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "flag-icons": "^6.6.6",
+    "sweetalert": "^2.1.2",
+    "vue": "^3.2.13",
+    "vue-axios": "^3.5.2",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.0.13",
+    "vue3-google-login": "^2.0.14",
+    "vuetify": "^3.0.4",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
