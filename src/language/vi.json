@@ -1,0 +1,454 @@
+{
+  "header": {
+    "location": "Số 02 Quang Trung,Thạch Thang, Hải Châu ,Đà Nẵng",
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "register": "Đăng kí",
+    "notification": "Thông báo",
+    "signInOut": "ĐĂNG NHẬP",
+    "managePost": "Quản lý tin đăng",
+    "pageManage": "Trang quản lý",
+    "changeInfo": "Thay đổi thông tin cá nhân",
+    "recharge": "Nạp tiền"
+  },
+  "menu": {
+    "homepage": "Trang chủ",
+    "buy": {
+      "title": "Mua nhà",
+      "item1": "Bán chung cư",
+      "item2": "Bán căn hộ",
+      "item3": "Bán shophouse"
+    },
+    "lease": {
+      "title": "Cho thuê",
+      "item1": "Cho thuê căn hộ",
+      "item2": "Cho thuê biệt thự",
+      "item3": "Cho thuê shophouse"
+    },
+    "news": "Tin tức",
+    "contact": "Liên hệ",
+    "searchTogether": "Cùng tìm kiếm",
+    "bestHouse": "NGÔI NHÀ TUYỆT NHẤT CHO BẠN",
+    "explore": "Khám phá",
+    "postNews": "Đăng tin",
+    "title": "FIND HOME",
+    "today": "hôm nay"
+  },
+  "sidebar": {
+    "balance": "Số dư tài khoản",
+    "main-account": "Tk chính",
+    "promotion-account": "TK KM",
+    "money": "Nạp tiền",
+    "news-management": {
+      "title": "Quản lý tin",
+      "post": "Đăng mới",
+      "list": "Danh sách tin",
+      "draft": "Tin nháp",
+      "saved": "Tin đã lưu"
+    },
+    "transactions": {
+      "title": "Quản lý giao dịch",
+      "balance": "Thông tin số dư",
+      "history": "Lịch sử giao dịch",
+      "promotion": "Khuyến mãi"
+    },
+    "customers": {
+      "title": "Khách hàng",
+      "my-customer": "Khách hàng của tôi",
+      "potential": "Khách hàng tiềm năng"
+    },
+    "quotes&instructions": {
+      "title": "Báo giá & hướng dẫn",
+      "quotes": "Báo giá",
+      "payment": "Hướng dẫn thanh toán",
+      "user-manual": "Hướng dẫn sử dụng"
+    },
+    "utilities": {
+      "title": "Tiện ích",
+      "receive-email": "QLĐK nhận email",
+      "lock": "Khoá tài khoản"
+    },
+    "admin": {
+      "home": "Trang chủ",
+      "user": {
+        "title": "Quản lý người dùng",
+        "type-user": "Quản lý loại người dùng"
+      },
+      "categories": {
+        "title": "Quản lý danh mục",
+        "type-classified": "Quản lý phân loại bất động sản",
+        "type-post": "Quản lý loại tin đăng",
+        "type-interior": "Quản lý loại nội thất",
+        "type-reatly": "Quản lý loại bất động sản",
+        "province": "Quản lý Tỉnh/Thành Phố",
+        "district": "Quản lý Quận/Huyện",
+        "ward": "Quản lý Phường/Xã"
+      },
+      "reatly": {
+        "title": "Quản lý tin bất động sản",
+        "post": "Danh sách bài đăng",
+        "draft": "Bài đăng nháp"
+      },
+      "news": {
+        "title": "Quản lý tin tức",
+        "category": "Danh sách thể loại",
+        "list": "Danh sách tin tức",
+        "draft": "Tin nháp"
+      },
+      "manage-customer": "Quản lý khách hàng",
+      "manage-feedback": "Quản lý phản hồi"
+    }
+  },
+  "footer": {
+    "company": "CÔNG TY CỔ PHẦN FINDHOME",
+    "connect": "KẾT NỐI VỚI CHÚNG TÔI",
+    "support": "Hỗ trợ khách hàng",
+    "care": "Chăm sóc khách hàng",
+    "download": "TẢI ỨNG DỤNG TRÊN ĐIỆN THOẠI",
+    "register": "ĐĂNG KÝ NHẬN TIN",
+    "btn-register": "Đăng ký",
+    "about-findhome": {
+      "title": "VỀ FINDHOME",
+      "introduce": "Giới thiệu",
+      "newspapers": "Báo chí nói gì về Findhome",
+      "recruitment": "Tuyển dụng",
+      "regulation": "Quy chế hoạt động",
+      "security": "Bảo mật thông tin",
+      "feedback": "góp ý",
+      "help": "Trợ giúp"
+    },
+    "about-service": {
+      "title": "VỀ DỊCH VỤ",
+      "buy": "Mua dịch vụ",
+      "coupon": "Quản lý coupon",
+      "quotes": "Báo giá truyền thông BĐS",
+      "news": "Tin tức"
+    }
+  },
+  "login":{
+    "welcome":"Để mỗi lựa chọn của bạn tốt hơn nhờ FINDHOME",
+    "hello":"Xin chào bạn",
+    "continue-login":"Đăng nhập để tiếp tục",
+    "forgot-password":"Quên mật khẩu ?",
+    "no-member":"Chưa là thành viên?",
+    "here":" tại đây",
+    "place-username":"SĐT chính hoặc email",
+    "remember-pass":"Nhớ mật khẩu"
+  },
+  "register":{
+    "new-register":"Đăng ký tài khoản mới",
+    "username":"Tên đăng nhập",
+    "firstname":"Họ",
+    "lastname":"Tên",
+    "email":"Email",
+    "phone":"Số điện thoại",
+    "from":"Bạn hiện tại đang là",
+    "password":"Mật khẩu",
+    "accept":"Bằng việc tiếp tục, bạn đồng ý với",
+    "rules":"Điều khoản sử dụng",
+    "of-we":"của chúng tôi",
+    "already-account":"Bạn đã có tài khoản?",
+    "place-username":"Tên tài khoản",
+    "place-firstname":"Họ của bạn",
+    "place-lastname":"Tên của bạn",
+    "place-email":"Nhập email *",
+    "place-phone":"Nhập SDT",
+    "place-typeuser":"Nhà mô giới",
+    "place-pass":"Nhập mật khẩu"
+  },
+  "cofirm": {
+    "delete": "Xác nhận xóa?"
+  },
+  "button": {
+    "close": "Đóng",
+    "save": "Lưu",
+    "accept": "Đồng ý",
+    "new": "Tạo mới",
+    "post": "Đăng Tin",
+    "draft": "Lưu Nháp",
+    "comment": "Gửi bình luận"
+  },
+  "news": {
+    "newslist": "DANH MỤC TIN TỨC",
+    "postNews": "ĐĂNG TIN MỚI",
+    "label": {
+      "title": "Tiêu đề",
+      "category": "Thể loại",
+      "description": "Mô tả",
+      "thumbnail": "Ảnh",
+      "content": "Nội dung",
+      "tags": "Tags"
+    },
+    "read": "Đọc thêm",
+    "day-ago": "ngày trước",
+    "posted-news": "Tin tức đã đăng",
+    "postings": "Tin đăng",
+    "tags": "Tags phổ biến",
+    "designer": "Nhà thiết kế",
+    "construction": "Thi công xây dựng",
+    "tax": "Thuế",
+    "cost-construction": "Chi phí thi công",
+    "modern-house": "Nhà hiện đại 2022",
+    "interior" : "Nội thất",
+    "views": "lượt xem",
+    "comment": "bình luận",
+    "comments": "bình luận",
+    "comment-date": "Bình luận ngày",
+    "leave-feedback": "Để lại phản hồi"
+  },
+
+  "bread": {
+    "manage-feedback": "Quản lý phản hồi",
+    "manage-partner": "Quản lý đối tác",
+    "manage-news": "Quản lý tin tức",
+    "news-list": "Danh sách tin tức",
+    "category-list": "Danh mục tin tức",
+    "manage-tags": "Quản lý tags",
+    "add-news": "Thêm mới tin tức"
+  },
+  "dialog": {
+    "otp": "Gửi OTP",
+    "code": "Gửi mã",
+    "resetPass": "Cập nhật mật khẩu"
+  },
+  "profile": {
+    "infoPersonal": "Thông tin cá nhân"
+  },
+  "rules": {
+    "require": {
+      "email": "E-mail không được trống",
+      "password": "Mật khẩu không được trống",
+      "name": "Không được trống",
+      "phone": "SĐT không được trống",
+      "otp": "Otp không được trống",
+      "rules": "không được trống",
+      "cardName":"Tên thẻ không được trống",
+      "cardNumber":"Số thẻ không được trống",
+      "yearMonth":"Ngày phát hành thẻ không được trống",
+      "confirmPass": "Mật khẩu không trùng khớp"
+    },
+    "valid": {
+      "email": "E-mail không đúng định dạng"
+    },
+    "characters": {
+      "name": "Tên phải ít hơn 10 kí tự",
+      "otp": "OTP phải đủ 6 kí tự"
+    }
+  },
+  "message": {
+    "txt-search": "Tìm kiếm",
+    "swal": {
+      "delete": "Bạn có chắc chắn muốn xoá?",
+      "delete-error": "Không thể xóa danh mục,Vui lòng xóa các dữ liệu trong danh mục con trước!",
+      "data-exists": "Dữ liệu đã tồn tại !",
+      "txt_pass":"Cập nhật mật khẩu",
+      "txt_register":"Đăng ký thành công",
+      "txt_user":"Cập nhật người dùng",
+      "txt-add": "Thêm mới thành công",
+      "showPassword":"Mật khẩu của bạn là: 123456",
+      "yearMonth":"MM/yy thẻ không đúng định dạng",
+      "selectBank":"Bạn chưa chọn ngân hàng",
+      "tokenExpires":"Phiên bản đã hết hạn. Vui lòng đăng nhập lại!!",
+      "icon":{
+        "success":"success",
+        "error": "error"
+      },
+      "notFound": {
+        "email": "Email không tìm thấy"
+      },
+      "incorrect": {
+        "password": "Mật khẩu không chính xác",
+        "usernameOrPass": "Tên tài khoản hoặc mật khẩu không chính xác",
+        "otp": "Otp không chính xác",
+        "code": "Code không chính xác"
+      },
+      "token":"Mã đặt lại mật khẩu đã gửi tới email của bạn",
+      "comment-content": "Nhập nội dung bình luận",
+      "comment-sent": "Đã gửi bình luận",
+      "confirmPass": "Mật khẩu mới phải khác mật khẩu cũ",
+      "sendOtp": "OTP đã gửi tới email của bạn",
+      "alreadyExist": {
+        "username": "Tên tài khoản hoặc email đã tồn tại"
+      },
+      "txt-hide": "Ẩn dữ liệu ?"
+    }
+  },
+  "form": {
+    "label-name": "Tên",
+    "label-image": "Hình ảnh",
+    "label-date": "Số ngày",
+    "label-province": "Tỉnh/Thành Phố",
+    "label-district": "Quận/Huyện",
+    "label-ward": "Phường/Xã",
+    "label-prefix": "Đơn vị",
+    "label-project": "Tên dự án",
+    "label-type-reatly": "Loại BĐS",
+    "label-classified": "Loại hình",
+    "label-address": "Địa chỉ",
+    "label-direction": "Hướng nhà",
+    "label-legal": "Tình trạng pháp lý",
+    "label-acreage": "Diện tích",
+    "label-acreage-min": "Diện tích min",
+    "label-acreage-max": "Diện tích max",
+    "label-price": "Giá tiền",
+    "label-price-min": "Giá min",
+    "label-price-max": "Giá max",
+    "label-title": "Tiêu đề",
+    "label-description": "Mô tả",
+    "label-facade": "Mặt tiền",
+    "label-way": "Đường vào",
+    "label-floor": "Số tầng",
+    "label-bed-room": "Số phòng ngủ",
+    "label-bath-room": "Số toliet,nhà tắm",
+    "label-year-build": "Năm xây dựng",
+    "label-furniture": "Loại nội thất",
+    "label-interior": "Nội thất",
+    "label-type-post": "Loại tin",
+    "label-time": "Thời gian",
+    "label-date-start": "Ngày bắt đầu",
+    "label-date-end": "Ngày kết thúc",
+    "label-name-contact": "Tên liên hệ",
+    "label-phone": "Số điện thoại",
+    "label-negotiable-price": "Giá thỏa thuận",
+    "label-situation": "Tình trạng",
+    "label-status": "Trạng thái",
+    "label-explance": "Mở rộng",
+    "label-viewCount": "Lượt xem",
+    "label-select-bds": "Chọn loại BDS",
+    "label-post-times": "Thời hạn tin",
+    "label-post-stt": "Số thứ tự",
+    "label-image-thumbnail": "Ảnh nền",
+    "place-text": "Nhập dữ liệu",
+    "place-select": "Chọn dữ liệu",
+    "place-area": "Nhập thông tin"
+  },
+  "table": {
+    "action": "Thao tác",
+    "category": "Thể loại",
+    "company": "Công ty",
+    "title": "Tiêu đề",
+    "date": "Ngày đăng",
+    "author": "Tác giả",
+    "isPublish": "Xuất bản",
+    "hide": "Ẩn",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "approve": "Duyệt",
+    "deny": "Từ chối",
+    "detail": "Xem chi tiết",
+    "user": {
+      "title": "DANH SÁCH NGƯỜI DÙNG",
+      "hrefHome": "Trang chủ",
+      "hrefList": "Danh sách người dùng",
+      "FirstName": "Họ",
+      "LastName": "Tên",
+      "UserName": "Tên tài khoản",
+      "Address": "Địa chỉ",
+      "TypeUser": "Loại người dùng",
+      "Phone": "Số điện thoại"
+    },
+    "news": {
+      "title": "Tiêu đề",
+      "date": "Ngày",
+      "isPublish": "Xuất bản",
+      "news-list": "Danh sách tin tức",
+      "today": "Hôm nay"
+    },
+    "tooltip": {
+      "publish": "Xuất bản",
+      "hide": "Ẩn",
+      "edit": "Chỉnh sửa",
+      "delete": "Xoá"
+    },
+    "list-feedback": "Danh sách phản hồi",
+    "name": "Họ và tên",
+    "job": "Công việc",
+  },
+  "changePass": "Thay đổi mật khẩu",
+  "password": "Mật khẩu",
+  "oldPass":"Mật khẩu cũ",
+  "newPass": "Mật khẩu mới",
+  "confirmPass": "Xác nhận mật khẩu",
+  "post-form": {
+    "confrim":"Thành công",
+    "not-enough-money": "Không đủ tiền",
+    "title": "Đăng tin mới",
+    "base-information": "Thông tin cơ bản",
+    "des-information": "Thông tin mô tả",
+    "img-information": "Thông tin hình ảnh",
+    "type-and-pay": "Chọn gói tin - Thanh toán",
+    "contact-information": "Thông tin liên hệ",
+    "rules-img": "Quy định đăng hình & video",
+    "note-img1": "Hãy dùng ảnh thật, không trùng, không chèn số điện thoại ",
+    "note-img2": "Mỗi ảnh kích thước tối thiểu 100x100 px, tối đa 15 MB",
+    "note-img3": "Số lượng ảnh tối đa tuỳ theo loại tin chọn ở bước tiếp theo",
+    "select-img": "Bấm để chọn ảnh cần tải lên",
+    "drop-img": "hoặc kéo thả ảnh vào đây",
+    "note-type-post1": "• Quý khách nên chọn đăng tin VIP để có hiệu quả hơn",
+    "note-type-post2": "VD: Tin Diamond có lượt xem trung bình cao hơn 20 lần so với tin thường",
+    "post-value": "GIÁ TRỊ TIN ĐĂNG",
+    "status": {
+      "draft": "Tin nháp",
+      "approve": "Đã duyệt",
+      "deny": "Từ chối",
+      "unpprove":"Chưa duyệt"
+    },
+    "cofrim-approve": "Xác nhận duyệt tin đăng này",
+    "due-day": "Còn hạn",
+    "expired-day": "Hết hạn",
+    "post-list-tab-user": {
+      "draft": "Tin nháp",
+      "approve": "Đã được duyệt",
+      "deny": "Bị Từ chối",
+      "unpprove":"Chưa được duyệt"
+    },
+    "post-list-tab-admin": {
+      "draft": "Tin nháp",
+      "approve": "Đã duyệt",
+      "deny": "Đã Từ chối",
+      "unpprove":"Chưa duyệt"
+    }
+  },
+  "recharge":{
+    "recharge":"Nạp tiền",
+    "money":"Số tiền",
+    "showBill":"Hiển thị hóa đơn",
+    "nameUser":"Tên người dùng",
+    "nameBank":"Tên ngân hàng",
+    "continue":"Tiếp tục"
+  },
+  "payment":{
+    "payment":"Thanh toán",
+    "billInfo":"Thông tin đơn hàng",
+    "paymentAmount":"Số tiền thanh toán",
+    "orderValue":"Giá trị đơn hàng",
+    "transactionFee":"Phí giao dịch",
+    "codeOrders":"Mã đơn hàng",
+    "supplier":"Nhà cung cấp",
+    "sdt":"Công ty cổ phần công nghệ số SDT",
+    "title":"Thanh toán qua ngân hàng",
+    "etEmail":"Nhập email",
+    "etCardNumber":"Nhập số thẻ",
+    "cardNumber": "Số thẻ",
+    "etCardName":"Nhập tên thẻ",
+    "cardName":"Tên thẻ (không dấu)",
+    "etYearMonth":"Nhập MM/yy",
+    "yearMonth":"MM/yy (*)",
+    "cancel":"Hủy"
+  },
+  "search": {
+    "label": {
+      "asc": "Tăng dần",
+      "desc": "Giảm dần",
+      "nowHave": "Hiện có",
+      "reatly": "bất động sản",
+      "sort": "Sắp xếp",
+      "date-post": "Theo ngày đăng",
+      "view-count": "Theo lượt xem",
+      "min-acreage": "Theo diện tích",
+      "min-price": "Theo giá",
+      "sort-by-price": "Lọc theo giá",
+      "sort-by-acreage": "Lọc theo diện tích"
+    }
+  }
+}

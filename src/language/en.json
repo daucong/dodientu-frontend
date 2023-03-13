@@ -1,0 +1,486 @@
+{
+  "message": "hello i18n !!",
+  "header": {
+    "location": "02 Quang Trung,Thạch Thang, Hải Châu ,Đà Nẵng",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "notification": "Notification",
+    "signInOut": "SIGNIN",
+    "managePost": "Manage post",
+    "pageManage": "Page manage",
+    "changeInfo": "Change personal information",
+    "recharge": "Recharge"
+  },
+  "menu": {
+    "homepage": "Homepage",
+    "buy": {
+      "title": "Buy house",
+      "item1": "Apartment for sale",
+      "item2": "Villa for sale",
+      "item3": "Shophouse for sale"
+    },
+    "lease": {
+      "title": "Lease",
+      "item1": "Rental apartment",
+      "item2": "Villa for rent",
+      "item3": "Shophouse for rent"
+    },
+    "news": "News",
+    "contact": "Contact",
+    "searchTogether": "search together",
+    "bestHouse": "BEST HOUSE FOR YOU",
+    "explore": "Explore",
+    "postNews": "Post news",
+    "title": "FIND HOME",
+    "today": "today"
+  },
+  "sidebar": {
+    "balance": "Account balance",
+    "main-account": "Main",
+    "promotion-account": "Promotion",
+    "money": "recharge",
+    "news-management": {
+      "title": "News management",
+      "post": "New posts",
+      "list": "News list",
+      "draft": "Draft news",
+      "saved": "Saved news"
+    },
+    "transactions": {
+      "title": "Transaction management",
+      "balance": "Balance information",
+      "history": "Transaction history",
+      "promotion": "Promotion"
+    },
+    "customers": {
+      "title": "Customers",
+      "my-customer": "My customers",
+      "potential": "Potential customers"
+    },
+    "quotes&instructions": {
+      "title": "Quotes & Instructions",
+      "quotes": "Quotes",
+      "payment": "Payment guide",
+      "user-manual": "User manual"
+    },
+    "utilities": {
+      "title": "Utilities",
+      "receive-email": "Receive email",
+      "lock": "Request account lockout"
+    },
+    "admin": {
+      "home": "Home",
+      "user": {
+        "title": "Manage user",
+        "type-user": "Manage type user"
+      },
+      "categories": {
+        "title": "Manage category",
+        "type-classified": "Manage classified reatly",
+        "type-post": "Manage type post",
+        "type-interior": "Manage type interior",
+        "type-reatly": "Manage type reatly",
+        "province": "Manage province",
+        "district": "Manage district",
+        "ward": "Manage ward"
+      },
+      "reatly": {
+        "title": "Manage reatly post",
+        "post": "List reatly post",
+        "draft1": "Draft reatly post"
+      },
+      "news": {
+        "title": "Manage news",
+        "category": "List category news",
+        "list": "List news",
+        "draft": "Draft news"
+      },
+      "manage-customer": "Manage customer",
+      "manage-feedback": "Manage feedback"
+    }
+  },
+  "footer": {
+    "company": "FINDHOME JOINT STOCK COMPANY",
+    "connect": "CONNECT WITH US",
+    "support": "Customer support",
+    "care": "Customer care",
+    "download": "DOWNLOAD APPS ON PHONE",
+    "register": "SIGN UP TO GET NEWS",
+    "btn-register": "Register",
+    "about-findhome": {
+      "title": "ABOUT FINDHOME",
+      "introduce": "Introduce",
+      "newspapers": "What the press said about Findhome",
+      "recruitment": "Recruitment",
+      "regulation": "Operational Regulations",
+      "security": "Information security",
+      "feedback": "Feedback",
+      "help": "Help"
+    },
+    "about-service": {
+      "title": "ABOUT SERVICES",
+      "buy": "Buy service",
+      "coupon": "Manage coupons",
+      "quotes": "Real estate media quotes",
+      "news": "News"
+    }
+  },
+  "login": {
+    "welcome": "Make your every choice better thanks to FINDHOME",
+    "hello": "Hello you",
+    "continue-login": "Sign in to continue",
+    "forgot-password": "Forgot pass ?",
+    "no-member": "Not a member yet?",
+    "here": " here",
+    "place-username": "Main phone number or email",
+    "remember-pass": "Remember password"
+  },
+  "register":{
+    "new-register":"Register a new account",
+    "username":"Username",
+    "firstname":"Firstname",
+    "lastname":"Lastname",
+    "email":"Email",
+    "phone":"Phone",
+    "from":"You are currently",
+    "password":"Password",
+    "accept":"By continuing, you agree to",
+    "rules":"rules of use",
+    "of-we":"ours",
+    "already-account":"Do you already an account?",
+    "place-username":"Account name",
+    "place-firstname":"Your first name",
+    "place-lastname":"Your last name",
+    "place-email":"Enter email *",
+    "place-phone":"Enter phone",
+    "place-typeuser":"Brokers",
+    "place-pass":"Enter password"
+  },
+  "cofrim":{
+    "delete":"Do you want delete?"
+  },
+  "button": {
+    "close": "Close",
+    "save": "Save",
+    "accpet": "Accpet",
+    "new": "New",
+    "post": "Create Post",
+    "draft": "Save Draft",
+    "comment": "Comment"
+  },
+
+  "form": {
+    "label-name": "Name",
+    "label-image": "Image",
+    "label-date": "Date Number",
+    "label-province": "Province",
+    "label-district": "District",
+    "label-ward": "Ward",
+    "label-prefix": "Prefix",
+    "label-project": "Project Name",
+    "label-type-reatly": "Type Reatly",
+    "label-classified": "Classified",
+    "label-address": "Address",
+    "label-direction": "Direction",
+    "label-legal": "Legal Status",
+    "label-acreage": "Acreage",
+    "label-acreage-min": "Min Acreage",
+    "label-acreage-max": "Max Acreage",
+    "label-price": "Price",
+    "label-price-min": "Min Price",
+    "label-price-max": "Max Price",
+    "label-direction": "Direction",
+    "label-title": "Title",
+    "label-description": "Description",
+    "label-facade": "Facade",
+    "label-way": "Way In",
+    "label-floor": "Number of floors",
+    "label-bed-room": "Number of bedrooms",
+    "label-bath-room": "Number of toilets, bathrooms",
+    "label-year-build": "Year Built",
+    "label-furniture": "Type of furniture",
+    "label-interior": "Interior",
+    "label-type-post": "Type post",
+    "label-time": "Date",
+    "label-date-start": "Date start",
+    "label-date-end": "Date End",
+    "label-name-contact": "Contact name",
+    "label-phone": "Phone",
+    "label-negotiable-price": "Negotiable price",
+    "label-situation": "Situation",
+    "label-status": "Status",
+    "label-explance": "Explance",
+    "label-viewCount": "Views",
+    "label-select-bds": "Select Type BDS",
+    "label-post-times": "Posting Deadline",
+    "label-post-stt": "Number order",
+    "label-image-thumbnail": "Thumbnail",
+    "place-text": "Input data",
+    "place-select": "Select data",
+    "place-area": "Input information"
+  },
+  "register": {
+    "new-register": "Register a new account",
+    "username": "Username",
+    "firstname": "Firstname",
+    "lastname": "Lastname",
+    "email": "Email",
+    "phone": "Phone",
+    "from": "You are currently",
+    "password": "Password",
+    "accept": "By continuing, you agree to",
+    "rules": "rules of use",
+    "of-we": "ours",
+    "already-account": "Do you already an account?",
+    "place-username": "Account name",
+    "place-firstname": "Your first name",
+    "place-lastname": "Your last name",
+    "place-email": "Enter email *",
+    "place-phone": "Enter phone",
+    "place-typeuser": "Brokers",
+    "place-pass": "Enter password"
+  },
+  "cofrim": {
+    "delete": "Do you want delete?"
+  },
+  "news": {
+    "newslist": "NEWS CATEGORY",
+    "postNews": "POST NEW NEWS",
+    "label": {
+      "title": "Title",
+      "category": "Category",
+      "description": "Description",
+      "thumbnail": "Thumbnail",
+      "content": "Content",
+      "tags": "Tags"
+    },
+    "read": "Read more",
+    "day-ago": "day ago",
+    "posted-news": "Posted news",
+    "postings": "Postings",
+    "tags": "Popular Tags",
+    "designer": "Designer",
+    "construction": "Construction",
+    "tax": "Tax",
+    "cost-construction": "Cost of construction",
+    "modern-house": "Modern house 2022",
+    "interior": "Interior",
+    "views": "views",
+    "view": "view",
+    "comment": "comment",
+    "comments": "comments",
+    "comment-date": "Comment date",
+    "leave-feedback": "Leave feedback"
+  },
+  "dialog": {
+    "otp": "Send OTP",
+    "code": "Send code",
+    "resetPass": "Reset password"
+  },
+  "changePass": {
+    "changePass": "Change password"
+  },
+  "profile": {
+    "infoPersonal": "Information personal"
+  },
+  "rules": {
+    "require": {
+      "email": "E-mail is required",
+      "password": "Password is required",
+      "name": "Name is required",
+      "phone": "Phone is required",
+      "otp": "Otp is required",
+      "rules": "Here is required",
+      "cardName":"Card name is required",
+      "cardNumber":"Card number is required",
+      "yearMonth":"Release card is required",
+      "confirmPass": "Passwords do not match"
+    },
+    "valid": {
+      "email": "E-mail must be valid"
+    },
+    "characters": {
+      "name": "Name must be less than 10 characters",
+      "otp": "OTP must be enough 6 characters"
+    }
+  },
+  "message": {
+    "txt-search": "Search",
+    "swal": {
+      "delete": "Are you sure delete?",
+      "delete-error": "Unable to delete the category, Please delete the data in the subcategory first!",
+      "data-exists": "Data already exists",
+      "txt_pass": "Password update",
+      "txt_register": "Register success",
+      "txt_user": "User update",
+      "txt-add": "Add new success",
+      "showPassword":"Your password: 123456",
+      "yearMonth":"MM/yy card malformed",
+      "selectBank":"You have not yet chosen the bank",
+      "tokenExpires":"Version has expired. Please log in again!!",
+      "icon": {
+        "success": "success",
+        "error": "error",
+        "warning": "warning"
+      },
+      "notFound": {
+        "email": "Email not found"
+      },
+      "incorrect": {
+        "password": "Password incorrect",
+        "usernameOrPass": "Username or password incorrect",
+        "otp": "Otp incorrect",
+        "code": "Code incorrect"
+      },
+      "confirmPass": "Password new must be different old password",
+      "sendOtp": "OTP send to email your",
+      "token": "Code reset password send to email your",
+      "comment-content": "Enter the text comment",
+      "comment-sent": "Comment sent",
+      "token": "Code reset password send to email your",
+      "alreadyExist": {
+        "username": "Username or email already exist"
+      },
+      "txt-hide": "Hide data ?"
+    }
+  },
+  "table": {
+    "title": "Title",
+    "date": "Created Date",
+    "author": "Author",
+    "isPublish": "Publish",
+    "hide": "Hide",
+    "action": "Action",
+    "category": "Category",
+    "company": "Company",
+    "edit": "Edit",
+    "delete": "Delete",
+    "approve": "Approve",
+    "deny": "Denied",
+    "detail": "Detail",
+    "user": {
+      "title": "LIST USER",
+      "hrefHome": "Home",
+      "hrefList": "List user",
+      "FirstName": "First name",
+      "LastName": "Last name",
+      "UserName": "User name",
+      "Address": "Address",
+      "TypeUser": "Type user",
+      "Phone": "Phone"
+    },
+    "news": {
+      "title": "Title",
+      "date": "Date",
+      "isPublish": "Publish",
+      "news-list": "News list",
+      "today": "Today"
+    },
+    "tooltip": {
+      "publish": "Publish",
+      "hide": "Hide",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "list-feedback": "Feedback list",
+    "name": "Full name",
+    "job": "Job"
+  },
+  "bread": {
+    "manage-news": "Manage news",
+    "category-list": "Category news",
+    "manage-tags": "Manage tags",
+    "add-news": "Post new",
+    "manage-customer": "Manage customer",
+    "manage-feedback": "Manage feedback",
+    "manage-partner": "Manage partner"
+  },
+  "changePass": "Change password",
+  "password": "Password",
+  "oldPass":"Old password",
+  "newPass": "New password",
+  "confirmPass": "Confirm password",
+  "post-form": {
+    "confrim":"Success",
+    "not-enough-money": "Not enough money",
+    "title": "New Post",
+    "base-information": "Base Information",
+    "des-information": "Description Information",
+    "img-information": "Image Information",
+    "type-and-pay": "Select Type Post - Pay",
+    "contact-information": "Contact Information",
+    "rules-img": "Rules for posting pictures & videos",
+    "note-img1": "Please use real photos, do not duplicate, do not insert phone numbers ",
+    "note-img2": "Each photo must be at least 100x100 px, up to 15 MB",
+    "note-img3": "The maximum number of images depends on the type of message selected in the step next",
+    "select-img": "Click to select the photo to upload",
+    "drop-img": "or drag and drop photos here",
+    "note-type-post1": "• You should choose to post VIP news to be more effective",
+    "note-type-post2": "VD: Diamond news has an average of 20 times more views than regular news",
+    "post-value": "POST VALUE",
+    "status": {
+      "draft": "Draft",
+      "approve": "Approved",
+      "deny": "Denied",
+      "unpprove":"Un Approved"
+    },
+    "cofrim-approve": "Cofrim approve post ?",
+    "due-day": "Due Day",
+    "expired-day": "Expired Day",
+    "post-list-tab-user": {
+      "draft": "Draft",
+      "approve": "Approved",
+      "deny": "Denied",
+      "unpprove":"Un Approved"
+    },
+    "post-list-tab-admin": {
+      "draft": "Draft",
+      "approve": "Approved",
+      "deny": "Denied",
+      "unpprove":"Un Approved"
+    }
+  },
+  "recharge":{
+    "recharge":"Recharge",
+    "money":"Amount of money",
+    "showBill":"Show bill",
+    "nameUser":"Name user",
+    "nameBank":"Name bank",
+    "continue":"Continue"
+  },
+  "payment":{
+    "payment":"Payment",
+    "billInfo":"Bill information",
+    "paymentAmount":"Payment amount",
+    "orderValue":"Bill value",
+    "transactionFee":"Transaction fee",
+    "codeOrders":"Code bills",
+    "supplier":"Supplier",
+    "sdt":"SDT Innovation Leads to Development",
+    "title":"Paying through bank",
+    "etEmail":"Enter email",
+    "etCardNumber":"Enter card number",
+    "cardNumber": "Card number",
+    "etCardName":"Enter card name",
+    "cardName":"Card name (unsigned)",
+    "etYearMonth":"Enter MM/yy",
+    "yearMonth":"Release date (*)",
+    "cancel":"Cancel"
+  },
+  "search": {
+    "label": {
+      "asc": "ASC",
+      "desc": "DESC",
+      "nowHave": "Have now",
+      "reatly": "reatly",
+      "sort": "Sort",
+      "date-post": "Flow date",
+      "view-count": "Flow view",
+      "min-acreage": "Flow acreage",
+      "min-price": "Flow price",
+      "sort-by-price": "Sort by price",
+      "sort-by-acreage": "Sort by acreage"
+    }
+  }
+}

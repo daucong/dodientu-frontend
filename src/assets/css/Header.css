@@ -1,0 +1,55 @@
+v-div.d-flex.mb-6.bg-surface-variant.header {
+    height: 80px;
+}
+
+v-div.ma-2.pa-2.mr-auto.d-flex {
+    align-items: center;
+}
+
+p#location {
+    width: 175px;
+}
+
+v-div.d-flex.mb-6.bg-surface-variant.header {
+    align-items: center;
+}
+
+v-div.ma-2.pa-2 {
+    display: flex;
+}
+
+v-div.header {
+    border-bottom: 1px solid rgba(119, 119, 119, 0.5);
+    margin-bottom: 0 !important;
+}
+
+p.header-contact {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.001em;
+    color: #777777;
+}
+
+span.span-notification, span.span-login {
+    font-size: 14px;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    color: black;
+    margin-left: 5px;
+}
+
+.v-btn.v-theme--light.v-btn--density-default.v-btn--size-default.v-btn--variant-text.span-login{
+    height: auto;
+}
+i.mdi-phone.header, i.mdi-map-marker-outline.header, i.mdi-email-outline.header{
+    color: #B53C12;
+    font-size: 19px !important;
+}
+
+select.language {
+    text-transform: uppercase;
+}

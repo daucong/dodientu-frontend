@@ -1,0 +1,15 @@
+.bds-logo-bank{
+    width: 120px;
+    height: 80px;
+}
+.bds-btn-bank{
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(44, 44, 44);
+    box-shadow: rgb(44 44 44 / 4%) 0px 4px 6px;
+    border-radius: 4px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}

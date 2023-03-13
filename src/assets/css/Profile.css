@@ -1,0 +1,32 @@
+.container_profile{
+    display: flex;
+    justify-content: center;
+}
+.btn_showHide{
+    margin-top: 13px;
+}
+.form-profile{
+    height: auto;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.name_login{
+    display: flex;
+    width: 1200px;
+}
+.txt_name_login{
+    margin-left: 10px;
+}
+.item_Login{
+    margin-left: 10px;
+}
+.span_saveProfile{
+    color: #FFFFFF;
+}
+.top-table-profile{
+    margin-left: 30px;
+    margin-top: 15px;
+}
+.txt_item_profile{
+    margin-top: 10px;
+}

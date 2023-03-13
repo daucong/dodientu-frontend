@@ -1,0 +1,32 @@
+.menu {
+    position: relative;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.btn-post-menu {
+    color: #777777;
+}
+
+img.img-logo-left {
+    height: 60px;
+    width: 70%;
+}
+
+
+img.logo-findhome {
+    width: 15%;
+    height: 10%;
+}
+
+i.mdi-heart-outline.icon-heart-menu {
+    margin-right: 21px;
+    font-size: 20px;
+    color: #777777;
+}
+
+.color777777 {
+    color: #777777;
+}

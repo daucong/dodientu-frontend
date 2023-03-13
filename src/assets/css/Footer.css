@@ -1,0 +1,91 @@
+footer.v-footer.v-theme--light.bg-black {
+    padding: 53px;
+    width: 100%;
+}
+
+span.fa.fa-phone.footer {
+    color: white;
+}
+
+.v-col.v-col-1.icon-head {
+    padding-top: 14px;
+}
+
+footer.v-footer.v-theme--light.bg-black .v-row p {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.001em;
+    color: #ffffff;
+}
+
+p.company {
+    font-weight: 600;
+    font-size: 18px;
+    padding-top: 40px;
+}
+
+.v-row.head {
+    padding-top: 41px;
+}
+
+i.fa.fa-phone.footer, i.fa.fa-headphones.footer, i.fa.fa-user.footer {
+    color: white;
+    font-size: 32px;
+}
+
+v-div.item p {
+    padding-top: 20px;
+}
+
+img.icon-download {
+    padding-top: 20px;
+    height: 64px;
+    width: 130px;
+    display: block;
+}
+
+p#label {
+    padding: 20px 0px 20px 0px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+input#email {
+    border-style: none;
+    background: white;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+v-div.contact-social-network {
+    margin-top: 20px;
+    display: flex;
+}
+
+v-div.contact-social-network img {
+    height: 25px;
+    margin-right: 5px;
+    background: white;
+    border-radius: 50%;
+}
+
+button.btn-register {
+    background: #B53C12;
+    padding: 7px;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+}
+
+i.fa.fa-map-marker.custom, i.fa.fa-phone.custom {
+    font-size: 19px;
+}
+
+.title-col {
+    margin-left: 13px;
+}

@@ -1,0 +1,28 @@
+.container_profile{
+    display: flex;
+    justify-content: center;
+}
+.btn_showHide{
+    margin-top: 13px;
+}
+
+.form-changePass{
+    height: auto;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.item_changePass{
+    height: auto;
+    width: 1200px;
+    margin-bottom: 10px;
+}
+.span_saveChangPass{
+    color: #FFFFFF;
+}
+.text_changPass{
+    margin-top: 15px;
+}
+.top-table{
+    margin-left: 30px;
+    margin-top: 15px;
+}

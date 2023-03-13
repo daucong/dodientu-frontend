@@ -1,0 +1,394 @@
+.containerLogin {
+    width: 852px;
+    margin: 0 auto;
+    top: 67px;
+    margin-bottom: 147px;
+    display: flex;
+    font-family: 'Raleway';
+    font-style: normal;
+}
+
+.formLogin {
+    width: 464px;
+    background: #FFFFFF;
+    border-radius: 0px 8px 8px 0px;
+    float: right;
+}
+
+.v-card.v-theme--light.v-card--density-default.v-card--variant-elevated.group_left {
+    width: 388px;
+    height: 100%;
+    background: rgba(227, 125, 91, 0.3);
+    border-radius: 8px 0px 0px 8px;
+    display: grid;
+}
+
+.imgAsset {
+    width: 160px;
+    height: 66px;
+    margin-left: 21px;
+    margin-top: 19px;
+}
+
+.imgFrame {
+    width: 339px;
+    height: 223px;
+    margin-left: 21px;
+    display: grid;
+    align-self: center
+}
+
+.v-card-text.txtGroup {
+    width: 314px;
+    height: 52px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.0125em;
+    color: #222222;
+    margin-left: 21px;
+    display: grid;
+    align-self: end
+}
+
+.tabText {
+    margin-left: 115px;
+}
+
+.span_tab {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.0125em;
+    color: #000000;
+    text-transform: initial;
+}
+
+.v-card-text.cardText_1 {
+    margin-left: -15px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.0125em;
+    color: #000000;
+}
+
+.v-card-text.cardText_2 {
+    margin-left: -15px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 0.0125em;
+    margin-top: -15px;
+    color: #000000;
+}
+
+.inforLogin {
+    margin-top: 25px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    width: 400px;
+    height: 70px;
+}
+
+.v-card-text.item_Login {
+    width: 600px;
+}
+
+.inforPass {
+    width: 400px;
+    height: 70px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+.v-btn.v-theme--light.bg-error.v-btn--density-default.v-btn--size-default.v-btn--variant-flat.btnLogin {
+    margin-top: 10px;
+    width: 400px;
+    height: 52px;
+    color: #B53C12 !important;
+    border-radius: 8px;
+}
+
+.span_login {
+    color: #FFFFFF;
+    text-transform: initial;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.0125em;
+}
+
+.v-input.v-input--horizontal.v-input--density-default.v-checkbox.checkboxLogin {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.0015em;
+    color: #000000;
+    margin-left: -2px;
+    width: auto;
+}
+
+.v-card-text.item_Login {
+    display: flex;
+    margin-left: -15px;
+    margin-top: -10px;
+}
+
+.textForgot {
+    width: 220px;
+    height: 18px;
+    margin-left: 80px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.0015em;
+    color: #D84815;
+    cursor: pointer;
+}
+
+.v-responsive.v-img.imgFrame1250 {
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 15px;
+    width: 374px;
+    height: 21px;
+    margin-left: 11px;
+    margin-top: -25px;
+}
+
+.v-btn.v-btn--elevated.v-theme--light.v-btn--density-default.v-btn--size-default.v-btn--variant-elevated.btnFacebook {
+    width: 190px;
+    height: 52px;
+    border: 1px solid #ABABAB;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.fa.fa-brands.fa-facebook.v-icon.notranslate.v-theme--light.v-icon--size-default {
+    color: #1877F2;
+}
+
+.fa.fa-brands.fa-google.v-icon.notranslate.v-theme--light.v-icon--size-default {
+    color: yellow;
+}
+
+.fa.fa-thin.fa-user.v-icon.notranslate.v-theme--light.v-icon--size-default {
+    margin-top: 5px;
+}
+
+.fa.fa-thin.fa-lock.v-icon.notranslate.v-theme--light.v-icon--size-default {
+    margin-top: 4px;
+}
+
+.fa.fa-solid.fa-eye.v-icon.notranslate.v-theme--light.v-icon--size-default.v-icon--clickable {
+    margin-top: 4px;
+}
+
+.fa.fa-solid.fa-eye-slash.v-icon.notranslate.v-theme--light.v-icon--size-default.v-icon--clickable {
+    margin-top: 4px;
+}
+
+.v-btn.v-btn--elevated.v-theme--light.v-btn--density-default.v-btn--size-default.v-btn--variant-elevated.btnGoogle {
+    width: 190px;
+    height: 52px;
+    border: 1px solid #ABABAB;
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.text_endLogin {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.0125em;
+    color: #000000;
+}
+
+.formRegister {
+    margin-top: 25px;
+}
+
+.itemForm {
+    margin-top: -10px;
+}
+
+.v-card-text.txt_Form {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.001em;
+    color: #000000;
+    margin-left: -15px;
+}
+
+.v-responsive.v-img.imgFrame1250_2 {
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 15px;
+    width: 374px;
+    height: 21px;
+    margin-left: 11px;
+    margin-top: 20px;
+}
+.dialog-forgotPass {
+    width: 500px;
+}
+
+.btn-forgotPass {
+    margin-left: auto;
+    margin-top: -10px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+}
+
+.txt-forgotPass {
+    color: #FFFFFF;
+}
+
+.group-btn-forgotPass {
+    display: flex;
+}
+
+.forgot-email-txt {
+    margin-top: 10px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.v-toolbar.v-toolbar--density-default.v-theme--light.toolbar-forgotPass {
+    background: white !important;
+}
+
+.txt-header-forgotPass {
+    margin-left: 15px;
+}
+
+.btn-ext-dialog {
+    margin-left: auto;
+}
+
+.mdi-close.mdi.v-icon.notranslate.v-theme--light.v-icon--size-default {
+    color: red;
+}
+
+.txt-bottom {
+    display: flex;
+    margin-left: 67px;
+    margin-top: 10px
+}
+
+.v-card-itemBottom1 {
+    margin-left: -155px;
+    color: red;
+    cursor: pointer
+}
+
+.v-card-itemBottom2 {
+    margin-left: -155px
+}
+
+.bottomReg {
+    display: flex;
+    margin-left: 67px
+}
+
+.itemBottomReg1 {
+    margin-left: -130px;
+    color: red;
+    cursor: pointer
+}
+
+.itemBottomReg2 {
+    margin-left: -130px
+}
+
+.item-reg-accept1 {
+    font-size: 12px;
+    margin-left: 10px
+}
+
+.item-reg-accept2 {
+    color: coral;
+    margin-left: -70px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.item-reg-accept3 {
+    margin-left: -70px;
+    font-size: 12px
+}
+
+@media only screen and (max-width: 667px) {
+    .txt-bottom, .bottomReg {
+        margin-left: 50px;
+    }
+
+    .v-card-itemBottom1, .v-card-itemBottom2 {
+        margin-left: -90px;
+    }
+
+    .itemBottomReg1, .itemBottomReg2 {
+        margin-left: -70px;
+    }
+
+    .item-reg-accept2{
+        margin-left: -40px;
+    }
+
+    .item-reg-accept3{
+        margin-left: -40px;
+        margin-right: -26px
+    }
+
+    .item-reg-accept1 {
+        margin-left: -10px !important;
+    }
+
+    .v-slide-group.v-tabs.v-tabs--horizontal.v-tabs--align-tabs-start.v-tabs--density-default.tabText{
+        margin-left: 70px;
+    }
+
+    .formLogin {
+        width: 380px !important;
+    }
+
+    .v-card.v-theme--light.v-card--density-default.v-card--variant-elevated.group_left {
+        display: none;
+    }
+
+    .inforLogin, .inforPass, .btnLogin {
+        width: 340px !important;
+    }
+
+    .textForgot {
+        margin-left: -100px;
+    }
+
+    .v-responsive.v-img.imgFrame1250, .imgFrame1250_2 {
+        width: 320px !important;
+    }
+
+    .v-btn.v-btn--elevated.v-theme--light.v-btn--density-default.v-btn--size-default.v-btn--variant-elevated.btnFacebook {
+        margin-left: 5px;
+        width: 150px;
+    }
+
+    .v-btn.v-btn--elevated.v-theme--light.v-btn--density-default.v-btn--size-default.v-btn--variant-elevated.btnGoogle {
+        width: 155px !important;
+    }
+
+    .txt-reg {
+        width: 340px !important;
+    }
+}
+

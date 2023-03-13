@@ -21,19 +21,19 @@ class UserService {
         return http.post("/user/v1/password", data);
     }
 
-    recharge(data){
+    recharge(data) {
         return http.post("/user/v1/checkRecharge", data);
     }
 
-    payment(data){
+    payment(data) {
         return http.post("/user/v1/payment", data);
     }
 
-    payPost(data){
+    payPost(data) {
         return http.post("/user/v1/payPost", data);
     }
 
-    plushPost(data){
+    plushPost(data) {
         return http.post("/user/v1/plushPost", data);
     }
 }

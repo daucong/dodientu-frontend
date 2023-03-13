@@ -1,0 +1,152 @@
+.small-sidebar button.btn-balance {
+    border: 1px solid #B53C12;
+    padding: 5px 18px;
+    border-radius: 5px;
+    color: white;
+    background: #B53C12;
+    margin-bottom: 16px;
+    padding: 20px 7px;
+    font-size: 10px;
+}
+
+span.float-right.promotion, span.float-right.main {
+    font-weight: 600;
+}
+
+.big-side-bar {
+    position: relative;
+    width: 100%;
+    padding: 30px 19px;
+    height: 100%;
+    font-family: "Raleway", sans-serif;
+    transition: 0.8s ease-in-out;
+}
+
+.avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.big-side-bar {
+    width: 259px;
+    padding: 30px 14px;
+    height: 100%;
+    box-shadow: 0px 4px 10px rgb(0 0 0 / 10%);
+}
+
+.balance {
+    padding: 20px;
+    background: rgba(216, 72, 21, 0.1);
+    border-radius: 8px;
+    margin-top: 26px;
+}
+
+p.text-balance {
+    padding-bottom: 8px;
+}
+
+h4.account-balance {
+    padding-bottom: 18px;
+}
+
+.menu-sidebar {
+    margin-top: 16px;
+}
+
+button.v-expansion-panel-title.panel-title-sidebar {
+    padding: 12px 12px;
+}
+
+button.btn-balance {
+    border: 1px solid #B53C12;
+    padding: 5px 18px;
+    border-radius: 5px;
+    color: #B53C12;
+    background: white;
+}
+
+i.fa.fa-sliders.sidebar, i.fa.fa-book.sidebar, i.fa.fa-light.fa-user-group.sidebar, i.fa.fa-database.sidebar, i.fa.fa-server.sidebar, i.fa.fa-solid.fa-house,i.fa.fa-signs-post.sidebar,i.fa.fa-list-alt.sidebar,i.fa-regular.fa-newspaper.sidebar,i.fa-solid.fa-earth-asia.sidebar,i.fa-solid.fa-user.sidebar {
+     color: #B53C12;
+ }
+
+i.fa.fa-angle-left.sidebar {
+    position: absolute;
+    right: -11px;
+    border: 1px solid;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: inherit
+}
+i.fa.fa-angle-down.sidebar{
+    font-size: 10px;
+}
+.small-sidebar {
+    padding: 49px 22px;
+    width: 110px;
+    transition: 0.8s ease-in-out;
+    box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    text-align: center;
+}
+
+p.text-small-sidebar {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 130%;
+    font-family: "Raleway", sans-serif;
+}
+
+.small-sidebar-item {
+    padding-bottom: 25px;
+}
+
+hr.line-sidebar {
+    margin-bottom: 30px;
+}
+
+.sidebar {
+    position: relative;
+}
+
+i.fa.fa-angle-right.sidebar {
+    position: absolute;
+    right: -9px;
+    top: 25px;
+    border: 1px solid;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: inherit
+}
+
+.fa.fa-duotone.fa-money-check-dollar.icon-money-small-sidebar {
+    padding: 0px 30px 30px 10px;
+}
+
+h3.name {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+a.d-block {
+    padding: 5px;
+    color: black;
+    font-family: raleway;
+    font-size: 14px;
+    font-weight: 500;
+}
+.click-user{
+    cursor: pointer;
+}
+.menu-sidebar a {
+    text-decoration: none;
+}

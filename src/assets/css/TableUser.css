@@ -1,0 +1,37 @@
+.bg-primary-tb {
+    background-color: #B53C12 !important;
+}
+.bg-background {
+    background-color: #F8F8F8;
+}
+.color-tb {
+    color: #F3F4F8 !important;
+}
+.br-none > td {
+    border: none !important;
+}
+.header-table > th {
+    color: white !important;
+}
+.text-tb-header {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.0043em;
+}
+.text-tb-content {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.0125em;
+}
+.breadcrumbs{
+    margin-left: -15px;
+}
+.table-user{
+    margin-top: 20px;
+}
