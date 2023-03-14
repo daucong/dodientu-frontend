@@ -3,10 +3,11 @@ import LoginReg from "./components/LoginReg.vue"
 import Profile from "./components/Profile"
 import ChangePass from "./components/ChangePass"
 import LayoutAdmin from "./components/LayoutAdmin"
-import ListUser from "./components/User/list"
+import ListUser from "./components/User/List"
 import Recharge from "./components/Recharge"
 import Payment from "./components/Payment"
 import HomeWeb from "./components/HomeWeb"
+import CreatePost from  "./components/Post/Create"
 
 const routes = [
     {
@@ -35,8 +36,13 @@ const routes = [
             {path: "profile", name: 'profile', component: Profile},
             {path: "changePass", name: 'changePass', component: ChangePass},
             {path: "recharge", name: 'recharge', component: Recharge},
-            {path: "payment", name: 'payment', component: Payment},
+            {path: "createPost", name: 'createPost', component: CreatePost},
         ]
+    },
+    {
+        path: "/payment",
+        name: 'payment',
+        component: Payment
     },
     {
         path: "/:catchAll(.*)",

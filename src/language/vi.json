@@ -79,13 +79,13 @@
         "type-classified": "Quản lý phân loại bất động sản",
         "type-post": "Quản lý loại tin đăng",
         "type-interior": "Quản lý loại nội thất",
-        "type-reatly": "Quản lý loại bất động sản",
+        "type-reatly": "Quản lý loại đồ điện tử",
         "province": "Quản lý Tỉnh/Thành Phố",
         "district": "Quản lý Quận/Huyện",
         "ward": "Quản lý Phường/Xã"
       },
       "reatly": {
-        "title": "Quản lý tin bất động sản",
+        "title": "Quản lý bài đăng",
         "post": "Danh sách bài đăng",
         "draft": "Bài đăng nháp"
       },
@@ -100,7 +100,7 @@
     }
   },
   "footer": {
-    "company": "CÔNG TY CỔ PHẦN FINDHOME",
+    "company": "ĐỒ ĐIỆN TỬ - WEBSITE MUA BÁN",
     "connect": "KẾT NỐI VỚI CHÚNG TÔI",
     "support": "Hỗ trợ khách hàng",
     "care": "Chăm sóc khách hàng",
@@ -110,18 +110,18 @@
     "about-findhome": {
       "title": "VỀ FINDHOME",
       "introduce": "Giới thiệu",
-      "newspapers": "Báo chí nói gì về Findhome",
+      "newspapers": "Báo chí nói gì về website đồ điện tử",
       "recruitment": "Tuyển dụng",
       "regulation": "Quy chế hoạt động",
       "security": "Bảo mật thông tin",
-      "feedback": "góp ý",
+      "feedback": "Góp ý",
       "help": "Trợ giúp"
     },
     "about-service": {
       "title": "VỀ DỊCH VỤ",
       "buy": "Mua dịch vụ",
       "coupon": "Quản lý coupon",
-      "quotes": "Báo giá truyền thông BĐS",
+      "quotes": "Báo giá truyền thông",
       "news": "Tin tức"
     }
   },
@@ -282,7 +282,7 @@
     "label-ward": "Phường/Xã",
     "label-prefix": "Đơn vị",
     "label-project": "Tên dự án",
-    "label-type-reatly": "Loại BĐS",
+    "label-type-reatly": "Loại DĐT",
     "label-classified": "Loại hình",
     "label-address": "Địa chỉ",
     "label-direction": "Hướng nhà",

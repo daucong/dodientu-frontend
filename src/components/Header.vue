@@ -6,7 +6,7 @@
           <div class="col-lg-3 col-md-3 align-self-center">
             <p class="header-contact d-inline">
               <v-icon icon="mdi:mdi-phone header border-0"/>
-              (84-236) 3812 175
+              (84-869) 633 830
             </p>
           </div>
           <div class="col-lg-4 col-md-4 align-self-center">
@@ -18,7 +18,7 @@
           <div class="col-lg-4 col-md-3 align-self-center">
             <p class="header-contact d-inline">
               <v-icon icon="mdi:mdi-email-outline header border-0"/>
-              contact@findhome.vn
+              contact@dodientu.vn
             </p>
           </div>
         </div>

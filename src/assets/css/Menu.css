@@ -15,10 +15,18 @@ img.img-logo-left {
     width: 70%;
 }
 
+.mdi-magnify.mdi.v-icon.notranslate.v-theme--light.v-icon--size-default{
+    font-size: 21px !important;
+    margin-top: 2px;
+}
+
+@media only screen and (max-width: 667px) {
+
+}
 
 img.logo-findhome {
-    width: 15%;
-    height: 10%;
+    height: 80px;
+    cursor: pointer;
 }
 
 i.mdi-heart-outline.icon-heart-menu {

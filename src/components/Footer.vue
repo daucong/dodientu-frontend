@@ -4,13 +4,13 @@
       <v-container fluid>
         <v-row>
           <v-col class=".col-xl-3 .col-lg-4 .col-sm-12 .col-md-6">
-            <img src="../assets/images/logo-findhome.png">
+            <img class="logo-findhome" src="../assets/images/logo-dodientu-ft.png">
             <p class="company">{{ $t('footer.company') }}</p>
             <v-div class="item">
               <p>
                 <i class="fa fa-map-marker custom"></i> {{ $t('header.location') }}
               </p>
-              <p><i class="fa fa-phone custom"></i> (84-236) 3812 175</p>
+              <p><i class="fa fa-phone custom"></i> (84-869) 633 830</p>
               <p>{{ $t('footer.connect') }}</p>
             </v-div>
             <v-div class="contact-social-network">
@@ -47,7 +47,7 @@
               </v-col>
               <v-col cols="10" class="title-col">
                 <p>{{ $t('footer.support') }}</p>
-                <p>hotro@findhome.com.vn</p>
+                <p>hotro@dodientu.com.vn</p>
               </v-col>
             </v-row>
             <p class="mt-2">{{ $t('footer.about-service.title') }}</p>
@@ -68,7 +68,7 @@
               </v-col>
               <v-col cols="10" class="title-col">
                 <p>{{ $t('footer.care') }}</p>
-                <p>trogiup@findhome.com.vn</p>
+                <p>trogiup@dodientu.com.vn</p>
               </v-col>
             </v-row>
             <p class="mt-2">{{ $t('footer.download') }}</p>

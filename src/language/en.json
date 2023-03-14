@@ -77,18 +77,18 @@
       },
       "categories": {
         "title": "Manage category",
-        "type-classified": "Manage classified reatly",
+        "type-classified": "Manage classified post",
         "type-post": "Manage type post",
         "type-interior": "Manage type interior",
-        "type-reatly": "Manage type reatly",
+        "type-reatly": "Manage type post",
         "province": "Manage province",
         "district": "Manage district",
         "ward": "Manage ward"
       },
       "reatly": {
-        "title": "Manage reatly post",
-        "post": "List reatly post",
-        "draft1": "Draft reatly post"
+        "title": "Manage post",
+        "post": "List post",
+        "draft1": "Draft post"
       },
       "news": {
         "title": "Manage news",
@@ -101,7 +101,7 @@
     }
   },
   "footer": {
-    "company": "FINDHOME JOINT STOCK COMPANY",
+    "company": "ELECTRONICS - BUY AND SELL WEBSITE",
     "connect": "CONNECT WITH US",
     "support": "Customer support",
     "care": "Customer care",
@@ -109,9 +109,9 @@
     "register": "SIGN UP TO GET NEWS",
     "btn-register": "Register",
     "about-findhome": {
-      "title": "ABOUT FINDHOME",
+      "title": "ABOUT ELECTRONICS",
       "introduce": "Introduce",
-      "newspapers": "What the press said about Findhome",
+      "newspapers": "What the press said about ELECTRONICS",
       "recruitment": "Recruitment",
       "regulation": "Operational Regulations",
       "security": "Information security",
@@ -179,7 +179,7 @@
     "label-ward": "Ward",
     "label-prefix": "Prefix",
     "label-project": "Project Name",
-    "label-type-reatly": "Type Reatly",
+    "label-type-reatly": "Type Electronice device",
     "label-classified": "Classified",
     "label-address": "Address",
     "label-direction": "Direction",

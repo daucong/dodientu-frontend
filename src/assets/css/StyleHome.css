@@ -6,6 +6,38 @@ i {
     font-size: 20px;
 }
 
+.title-home{
+   font-size: 17px;
+       margin: 0px 0px 12px;
+       font-weight: bold;
+       font-stretch: normal;
+       font-style: normal;
+       line-height: 1.41;
+       letter-spacing: normal;
+       color: rgb(34, 34, 34);
+       padding-left: 12px;
+}
+
+.txt-category{
+    color: rgb(34, 34, 34);
+    text-shadow: rgb(255, 255, 255) 0px 0px;
+    line-height: 1.29;
+    font-size: 14px;
+    text-align: center;
+    width: 110px;
+    height: 35px;
+    margin-top: 8px;
+    margin-left: 0px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .text-white {
     color: #FFFFFF !important;
 }

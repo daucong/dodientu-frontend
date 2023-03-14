@@ -91,45 +91,11 @@
                     <v-expansion-panel v-if="showAdminBoard">
                         <v-expansion-panel-title expand-icon="fa fa-angle-down" collapse-icon="fa fa-angle-up"
                                                  class="panel-title-sidebar">
-                            <v-icon icon="fa-regular fa-newspaper sidebar"/>&nbsp; {{ $t('sidebar.admin.news.title') }}
-                        </v-expansion-panel-title>
-                        <v-expansion-panel-text>
-                            <router-link :to="{ name: 'category-news' }" class="d-block">{{
-                                $t('sidebar.admin.news.category') }}
-                            </router-link>
-                            <router-link :to="{ name: 'manage-tags' }" class="d-block">{{ $t('bread.manage-tags') }}
-                            </router-link>
-                            <router-link :to="{ name: 'manage-news' }" class="d-block">{{ $t('sidebar.admin.news.list')
-                                }}
-                            </router-link>
-                        </v-expansion-panel-text>
-
-                    </v-expansion-panel>
-
-                    <v-expansion-panel v-if="showAdminBoard">
-                        <v-expansion-panel-title expand-icon="fa fa-angle-down" collapse-icon="fa fa-angle-up"
-                                                 class="panel-title-sidebar">
                             <v-icon icon="fa fa-solid fa-user sidebar"/>&nbsp; {{ $t('sidebar.admin.user.title') }}
                         </v-expansion-panel-title>
                         <v-expansion-panel-text>
                             <a class="d-block"><span class="click-user" @click="gotoListUser">{{ $t('sidebar.admin.user.title') }}</span></a>
                         </v-expansion-panel-text>
-                    </v-expansion-panel>
-                    <v-expansion-panel v-if="showAdminBoard">
-                        <v-expansion-panel-title expand-icon="fa fa-angle-down" collapse-icon="fa fa-angle-up"
-                                                 class="panel-title-sidebar">
-                            <v-icon icon="fa fa-light fa-user-group sidebar"/>&nbsp; {{
-                            $t('sidebar.admin.manage-customer') }}
-                        </v-expansion-panel-title>
-                        <v-expansion-panel-text>
-                            <router-link :to="{ name: 'manage-feedback' }" class="d-block">{{
-                                $t('sidebar.admin.manage-feedback') }}
-                            </router-link>
-                            <router-link :to="{ name: 'manage-partner' }" class="d-block">{{ $t('bread.manage-partner')
-                                }}
-                            </router-link>
-                        </v-expansion-panel-text>
-
                     </v-expansion-panel>
                 </v-expansion-panels>
             </div>
