@@ -36,6 +36,11 @@ class UserService {
     plushPost(data) {
         return http.post("/user/v1/plushPost", data);
     }
+
+    bonusAdmin(data) {
+        return http.post("/user/v1/bonusAdmin", data);
+    }
+
 }
 
 export default new UserService();

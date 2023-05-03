@@ -39,13 +39,13 @@
                     {
                         title: this.$t('table.user.hrefHome'),
                         disabled: false,
-                        href: 'home',
+                        href: '/ddt/home',
                     },
                     {
                         title: this.$t('table.user.hrefList'),
                         disabled: true,
                         color:"#1479FF",
-                        href: 'listUser',
+                        href: 'list-user',
                     },
                 ],
                 headers: [

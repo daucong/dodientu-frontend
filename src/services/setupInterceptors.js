@@ -50,7 +50,7 @@ const setup = (store) => {
                         icon: this.$t('message.swal.icon.warning'),
                         timer: 5000,
                     })
-                    window.location.assign("http://localhost:8081/login")
+                    window.location.assign("http://localhost:8081/ddt/login")
                 }
             }
             return Promise.reject(err);

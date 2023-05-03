@@ -503,6 +503,7 @@
                 message: "",
                 overlay: false,
                 google: [],
+                language: 'vi'
             };
         },
         methods: {
@@ -525,7 +526,7 @@
                         }
                         this.$store.dispatch("auth/login", user).then(
                             () => {
-                                this.$router.push("/home");
+                                this.$router.push("/ddt/home");
                             },
                         )
                     });
@@ -549,7 +550,7 @@
                         }
                         this.$store.dispatch("auth/login", user).then(
                             () => {
-                                this.$router.push("/home");
+                                this.$router.push("/ddt/home");
                             },
                         )
                     });
@@ -584,7 +585,7 @@
                 }
                 this.$store.dispatch("auth/login", user).then(
                     () => {
-                        this.$router.push("/home");
+                        this.$router.push("/ddt/home");
                     },
                     (error) => {
                         if (error.response.status == 401) {
@@ -751,8 +752,9 @@
             if (this.loggedIn) {
                 this.$router.push("/home");
             }
-        }
-        ,
+            this.$i18n.locale = this.language
+            window.localStorage.setItem('language', this.language);
+        },
         watch: {
             overlay (val) {
                 val && setTimeout(() => {

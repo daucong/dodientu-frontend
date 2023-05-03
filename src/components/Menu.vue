@@ -16,13 +16,14 @@
                                     append-inner-icon="mdi:mdi-magnify"
                                     single-line
                                     hide-details
+                                    v-model="searchText"
                                     @click:append-inner="onClick"
                             ></v-text-field>
                         </v-card-text>
                         <div class="d-flex align-items-center ms-auto col-6">
                             <v-icon icon="mdi:mdi-cart-variant me-3" style="font-size:25px !important; cursor: pointer"/>
                             <v-btn variant="outlined" class="btn-post-menu"
-                                   @click="loggedIn == null ? $router.push('login') : $router.push({name: 'createPost'}) ">
+                                   @click="loggedIn == null ? $router.push('login') : $router.push({name: 'create-post'}) ">
                                 <span class="color777777 text-capitalize">{{ $t('menu.postNews') }}</span></v-btn>
                         </div>
                     </div>
@@ -39,6 +40,7 @@
             loggedIn: "",
             loaded: false,
             loading: false,
+            searchText:""
         }),
         methods: {
             goToHome() {
@@ -48,11 +50,13 @@
             },
             onClick () {
                 this.loading = true
-
                 setTimeout(() => {
                     this.loading = false
                     this.loaded = true
                 }, 2000)
+
+                const routeData = this.$router.resolve({name: 'get-post', query: {q: this.searchText}});
+                window.open(routeData.href, '_blank');
             },
         },
         mounted() {

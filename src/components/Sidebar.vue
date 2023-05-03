@@ -14,9 +14,9 @@
             <div class="balance">
                 <h4 class="account-balance">{{ $t('sidebar.balance') }}</h4>
                 <p class="text-balance">{{ $t('sidebar.main-account') }}: <span
-                        class="float-right main">{{surplus}}</span></p>
+                        class="float-right main">{{surplus}}VNĐ</span></p>
                 <p class="text-balance">{{ $t('sidebar.promotion-account') }}: <span
-                        class="float-right promotion">0</span>
+                        class="float-right promotion">0 VNĐ</span>
                 </p>
                 <div class="d-flex justify-center">
                     <button class="btn-balance" @click="gotoRecharge">
@@ -51,17 +51,8 @@
                             <v-icon icon="fa fa-list-alt sidebar"/>&nbsp; {{ $t('sidebar.admin.categories.title') }}
                         </v-expansion-panel-title>
                         <v-expansion-panel-text>
-                            <router-link :to="{ name: 'classfiedreatly' }" class="d-block">{{
-                                $t('sidebar.admin.categories.type-classified') }}
-                            </router-link>
                             <router-link :to="{ name: 'typepost' }" class="d-block">{{
                                 $t('sidebar.admin.categories.type-post') }}
-                            </router-link>
-                            <router-link :to="{ name: 'typeinterior' }" class="d-block">{{
-                                $t('sidebar.admin.categories.type-interior') }}
-                            </router-link>
-                            <router-link :to="{ name: 'typereatly' }" class="d-block">{{
-                                $t('sidebar.admin.categories.type-reatly') }}
                             </router-link>
                             <router-link :to="{ name: 'province' }" class="d-block">{{
                                 $t('sidebar.admin.categories.province') }}
@@ -176,15 +167,16 @@
                 let id = data.id;
                 UserService.findUserById(id).then((response) => {
                     this.surplus = response.data.surplus
-                    this.surplus = new Intl.NumberFormat("de-DE", {
+                    const amount = parseInt(this.surplus.toString().replace(/\D/g, ""));
+                    this.surplus =  new Intl.NumberFormat("de-DE", {
                         style: "currency",
                         currency: "VND"
-                    }).format(this.surplus);
+                    }).format(amount).replace('₫', '')
                 })
             },
             gotoListUser() {
                 this.$router.push({
-                    name: 'listUser',
+                    name: 'list-user',
                 });
             },
             gotoRecharge() {

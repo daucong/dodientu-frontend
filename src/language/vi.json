@@ -1,6 +1,6 @@
 {
   "header": {
-    "location": "Số 02 Quang Trung,Thạch Thang, Hải Châu ,Đà Nẵng",
+    "location": "172 Trần cao vân, Đà Nẵng",
     "login": "Đăng nhập",
     "logout": "Đăng xuất",
     "register": "Đăng kí",
@@ -221,7 +221,7 @@
       "name": "Không được trống",
       "phone": "SĐT không được trống",
       "otp": "Otp không được trống",
-      "rules": "không được trống",
+      "rules": "Không được trống",
       "cardName":"Tên thẻ không được trống",
       "cardNumber":"Số thẻ không được trống",
       "yearMonth":"Ngày phát hành thẻ không được trống",

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {createRouter, createWebHistory} from "vue-router"
 import LoginReg from "./components/LoginReg.vue"
 import Profile from "./components/Profile"
@@ -7,40 +8,64 @@ import ListUser from "./components/User/List"
 import Recharge from "./components/Recharge"
 import Payment from "./components/Payment"
 import HomeWeb from "./components/HomeWeb"
-import CreatePost from  "./components/Post/Create"
+import CreatePost from "./components/Post/Create"
+import UserListPost from "./components/Post/UserList"
+import ListPost from "./components/Post/ListPost"
+import PostDetailAdmin from "./components/Post/PostDetail"
+import PostDetail from "./components/PostDetail"
+import PostEdit from "./components/Post/EditPost"
+import GetPost from "./components/ListPost"
 
 const routes = [
     {
-        path: "/login",
+        path: "/ddt/login",
         name: "login",
         component: LoginReg,
     },
     {
-        path: "/home",
+        path: "/ddt/",
         name: "home",
         component: HomeWeb,
     },
     {
-        path: '/admin/',
+        path: "/ddt/home",
+        component: HomeWeb,
+    },
+    {
+        path: '/ddt/admin/',
         name: 'admin',
         component: LayoutAdmin,
         children: [
-            { path: 'listUser',name: 'listUser',component: ListUser },
+            {path: 'list-user', name: 'list-user', component: ListUser},
+            {path: 'admin-list-post', name: 'admin-list-post', component: ListPost},
         ]
     },
+    {path: '/ddt/admin/postdetail/:id', name: "post-detail-admin", component: PostDetailAdmin},
     {
-        path: '/user/',
+        path: '/ddt/user/',
         name: 'users',
         component: LayoutAdmin,
         children: [
             {path: "profile", name: 'profile', component: Profile},
-            {path: "changePass", name: 'changePass', component: ChangePass},
+            {path: "change-pass", name: 'change-pass', component: ChangePass},
             {path: "recharge", name: 'recharge', component: Recharge},
-            {path: "createPost", name: 'createPost', component: CreatePost},
+            {path: "create-post", name: 'create-post', component: CreatePost},
+            {path: "user-list-post", name: 'user-list-post', component: UserListPost},
+            {path: 'edit', name: 'edit-post', component: PostEdit},
         ]
     },
     {
-        path: "/payment",
+        path: "/ddt/postdetail",
+        name: "post-detail",
+        component: PostDetail,
+    },
+    {
+        path: "/ddt/mua-ban",
+        name: "get-post",
+        component: GetPost,
+    },
+    {
+        path: "/ddt/payment",
         name: 'payment',
         component: Payment
     },
@@ -56,27 +81,27 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    const authRequired = to.path.indexOf('/user') >= 0 || to.path.indexOf('/admin') >= 0;
+    const authRequired = to.path.indexOf('/ddt/user') >= 0 || to.path.indexOf('/ddt/admin') >= 0;
     const loggedIn = JSON.parse(localStorage.getItem("user"))
 
     if (!authRequired) {
         next();
-    }else {
-        if(!loggedIn) {
+    } else {
+        if (!loggedIn) {
             next('login');
 
-        }else {
-            let checkpatadmin = to.path.indexOf('/admin') >= 0;
+        } else {
+            let checkpatadmin = to.path.indexOf('/ddt/admin') >= 0;
 
-           if(checkpatadmin){
-               if (loggedIn.roles.includes('ROLE_ADMIN')) {
-                   next()
-               }else {
-                   next('home')
-               }
-           }else {
-               next()
-           }
+            if (checkpatadmin) {
+                if (loggedIn.roles.includes('ROLE_ADMIN')) {
+                    next()
+                } else {
+                    next('home')
+                }
+            } else {
+                next()
+            }
         }
     }
 });
