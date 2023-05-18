@@ -36,6 +36,7 @@
             <v-tab @click="refuse = false,setRefuse()" :value="2">{{ $t('post-form.post-list-tab-admin.approve') }}</v-tab>
             <v-tab @click="refuse = false,setRefuse()" :value="0">{{ $t('post-form.post-list-tab-admin.draft') }}</v-tab>
             <v-tab @click="refuse = true,setRefuse()" :value="3">{{ $t('post-form.post-list-tab-admin.deny') }}</v-tab>
+            <v-tab @click="refuse = false,setRefuse()" :value="4">Đã xóa</v-tab>
         </v-tabs>
 
 
@@ -254,27 +255,15 @@
                 params["page"] = this.page;
                 params["limit"] = 5
                 params["status"] = this.tab
+                if (this.tab === 4){
+                    params["isDelete"] = 'true';
+                }
                 params["userId"] = this.user.id
                 PostService.getAllByUserId(params)
                     .then(response => {
                         this.postList = response.data.content;
                         this.totalPages = response.data.totalPages;
                         this.loading = false
-
-                        if(response.data.content.status == 1){
-                            if(this.getActivate(response.data.endDate) === "Hết hạn"){
-                                PostService.setStatusPlus(response.data.content.id).then()
-                                var data1 = {
-                                    userId: response.data.content.userId,
-                                    moneyPost: response.data.content.postPrice,
-                                    statusPlus: response.data.content.statusPlus
-                                }
-                                UserService.plushPost(data1).then((response) => {
-                                    console.log(response)
-                                })
-
-                            }
-                        }
                     })
                     .catch(e => {
                         this.notification(e.response.data.message, "error");
@@ -357,7 +346,7 @@
                     .then(response => {
                         let dataCha = response.data
                         this.statusPost = response.data.status;
-                        if(dataCha.status == 3){
+                        if(dataCha.status === 3){
                             var data = {
                                 userId: dataCha.userId,
                                 moneyPost: dataCha.postPrice
@@ -366,19 +355,18 @@
                                 console.log(response)
                             })
                         }
-                        if(dataCha.status == 1){
-                            localStorage.statusPlus = null
+                        if(dataCha.status === 1){
                             if(this.getActivate(response.data.endDate) === "Hết hạn"){
-                                var data1 = {
-                                    userId: dataCha.userId,
-                                    moneyPost: dataCha.postPrice,
-                                    statusPlus: localStorage.statusPlus
-                                }
-                                UserService.plushPost(data1).then((response) => {
-                                    console.log(response)
-                                    localStorage.statusPlus = 1
+                                UserService.findUserById(dataCha.userId).then(response =>{
+                                    var data1 = {
+                                        userId: dataCha.userId,
+                                        moneyPost: dataCha.postPrice,
+                                        statusPlus: response.data.status
+                                    }
+                                    UserService.plushPost(data1).then(() => {
+                                        UserService.setStatus(dataCha.userId, 1).then()
+                                    })
                                 })
-
                             }
                         }
                     })

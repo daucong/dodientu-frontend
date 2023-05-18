@@ -15,6 +15,13 @@ import PostDetailAdmin from "./components/Post/PostDetail"
 import PostDetail from "./components/PostDetail"
 import PostEdit from "./components/Post/EditPost"
 import GetPost from "./components/ListPost"
+import Cart from "./components/Cart"
+import CheckOut from "./components/CheckOut"
+import UserListCheckOut from "./components/UserListCheckOut"
+import TypePost from "./components/Categories/TypePost"
+import Province from "./components/Categories/Province"
+import District from "./components/Categories/District"
+import Ward from "./components/Categories/Ward"
 
 const routes = [
     {
@@ -38,9 +45,14 @@ const routes = [
         children: [
             {path: 'list-user', name: 'list-user', component: ListUser},
             {path: 'admin-list-post', name: 'admin-list-post', component: ListPost},
+            {path: 'province', name: 'province', component: Province},
+            {path: 'district', name: 'district', component: District},
+            {path: 'ward', name: 'ward', component: Ward},
+            {path: 'typepost', name: 'typepost', component: TypePost},
         ]
     },
     {path: '/ddt/admin/postdetail/:id', name: "post-detail-admin", component: PostDetailAdmin},
+    {path: '/ddt/user/checkout', name: "check-out", component: CheckOut},
     {
         path: '/ddt/user/',
         name: 'users',
@@ -52,10 +64,12 @@ const routes = [
             {path: "create-post", name: 'create-post', component: CreatePost},
             {path: "user-list-post", name: 'user-list-post', component: UserListPost},
             {path: 'edit', name: 'edit-post', component: PostEdit},
+            {path: 'cart', name: 'cart', component: Cart},
+            {path: 'purchase', name: 'purchase', component: UserListCheckOut},
         ]
     },
     {
-        path: "/ddt/postdetail",
+        path: "/ddt/post/detail/:title",
         name: "post-detail",
         component: PostDetail,
     },

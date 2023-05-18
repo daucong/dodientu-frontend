@@ -96,7 +96,7 @@
                     {
                         title: this.$t('table.user.hrefHome'),
                         disabled: false,
-                        href: '/home',
+                        href: '/ddt/home',
                     },
                     {
                         title: this.$t('profile.infoPersonal'),

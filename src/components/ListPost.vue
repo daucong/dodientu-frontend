@@ -48,55 +48,65 @@
                                 </div>
                             </div>
                         </div>
-                        <div v-if="showMes" class="text-center mt-5 card">
+                        <div v-if="showMes" class="text-center mt-5">
                             <p class="card-text post-description">{{this.message}}</p>
                         </div>
-                        <div class="card mb-3 " v-for="entry in listPost" :key="entry.id">
-                            <router-link :to="{ name: ''}" class="d-block text-decoration-none" target="_blank">
-                                <div class="row g-0">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xxl-3 sdt-image-container">
-                                        <img
-                                                :src=getUrlImage(entry.thumbnail)
-                                                class="sdt-card-image img-fluid rounded-start h-100 w-100"
-                                        >
-                                        <div class="sdt-image-note">
-                                            <div class="sdt-image-note-text">
-                                                <img src="../../src/assets/images/ic_image_logo.png">
-                                                <span>{{ entry.images.length }}</span>
+
+                        <div class="card mb-3" v-for="entry in listPost" :key="entry.id">
+                            <v-hover
+                                    v-slot="{ isHovering, props }"
+                                    open-delay="200"
+                            >
+                                <v-card
+                                        :elevation="isHovering ? 16 : 2"
+                                        :class="{ 'on-hover': isHovering }" v-bind="props">
+                                    <router-link :to="{name: 'post-detail', params: {title: entry.title,},}" class="d-block text-decoration-none" target="_blank">
+                                        <div class="row g-0">
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xxl-3 sdt-image-container">
+                                                <img
+                                                        :src=getUrlImage(entry.thumbnail)
+                                                        class="sdt-card-image img-fluid rounded-start h-100 w-100"
+                                                >
+                                                <div class="sdt-image-note">
+                                                    <div class="sdt-image-note-text">
+                                                        <img src="../../src/assets/images/ic_image_logo.png">
+                                                        <span>{{ entry.images.length }}</span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xxl-9 d-grid">
-                                        <div class="card-body ct-display">
-                                            <h5 class="card-title font-weight-bold">{{entry.title}}</h5>
-                                            <div class="sdt-card-text-header pb-2">
-                                                <span>{{formatCurrency(entry.price)}} VNĐ</span>
-                                                <span class="float-end">
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xxl-9 d-grid">
+                                                <div class="card-body ct-display">
+                                                    <h5 class="card-title font-weight-bold">{{entry.title}}</h5>
+                                                    <div class="sdt-card-text-header pb-2">
+                                                        <span>{{formatCurrency(entry.price)}} VNĐ</span>
+                                                        <span class="float-end">
                                                 <span class="point"></span>
                                                 {{entry.address}}, {{entry.ward.name}}, {{entry.ward.district.name}}, {{entry.ward.district.province.name}}
                                             </span>
-                                            </div>
-                                            <p class="card-text post-description">{{entry.description}}</p>
+                                                    </div>
+                                                    <p class="card-text post-description">{{entry.description}}</p>
 
-                                            <div class="sdt-card-footer justify-content-between align-self-end">
-                                                <div class="card-text">
-                                                    <small class="">
-                                                        <i class="fa-regular fa-clock pe-1"></i>
-                                                        <span v-if="dateDiff(entry.postDate) < 1"> {{ $t('table.news.today') }}</span>
-                                                        <span v-else> {{ dateDiff(entry.postDate) }} {{ $t('news.day-ago') }}</span>
-                                                    </small>
-                                                    <small class="ms-2"><i class="fa-regular fa-eye"></i>
-                                                        {{entry.viewCount}} {{ $t('form.label-viewCount') }}
-                                                    </small>
+                                                    <div class="sdt-card-footer justify-content-between align-self-end">
+                                                        <div class="card-text">
+                                                            <small class="">
+                                                                <i class="fa-regular fa-clock pe-1"></i>
+                                                                {{calculateElapsedTime(entry.postDate)}}
+                                                                {{elapsedTime }} trước
+                                                            </small>
+                                                            <small class="ms-2"><i class="fa-regular fa-eye"></i>
+                                                                {{entry.viewCount}} {{ $t('form.label-viewCount') }}
+                                                            </small>
+                                                        </div>
+                                                        <button class="btn btn-favourite"><i
+                                                                class="fa-regular fa-heart"></i>
+                                                        </button>
+                                                    </div>
                                                 </div>
-                                                <button class="btn btn-favourite"><i
-                                                        class="fa-regular fa-heart"></i>
-                                                </button>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </router-link>
+                                    </router-link>
+                                </v-card>
+                            </v-hover>
                         </div>
 
                         <div class="row" v-if="showPage">
@@ -165,7 +175,7 @@
                 page: 1,
                 totalPages: [],
                 options: {},
-                itemsPerPage: 5,
+                itemsPerPage: 20,
                 toggle: 1,
                 totalElements: null,
                 items: [
@@ -187,7 +197,10 @@
                 provinceId: '',
                 message: "",
                 showMes: false,
-                showPage: false
+                showPage: false,
+                txtCategory: "",
+                elapsedTime: '',
+                interval: null,
             }
         },
         created() {
@@ -196,7 +209,7 @@
             this.getCategory()
         },
         mounted() {
-
+            this.txtCategory = this.$route.query.category
         },
         methods: {
             toSlug(str) {
@@ -230,6 +243,15 @@
                 CategoryService.list()
                     .then(reponse => {
                         this.categories = reponse.data
+                        if (this.txtCategory !== "") {
+                            let size = reponse.data.length
+                            for (let i = 0; i < size; i++) {
+                                if (reponse.data[i].name === this.txtCategory) {
+                                    this.formItem.category = reponse.data[i].id
+                                    this.onChangeListPost()
+                                }
+                            }
+                        }
                         var name = "Tất cả"
                         this.categories.push({name: name})
                     })
@@ -312,9 +334,30 @@
                 var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24)
                 return Math.round(Difference_In_Days);
             },
-            // showDetail(id) {
-            //     this.$router.push({name:'post-detail', params:{id: id}})
-            // },
+            calculateElapsedTime(postDate) {
+                const currentTime = new Date();
+                const inputTime = new Date(postDate);
+
+                const elapsedTime = currentTime - inputTime;
+                const secondsElapsed = parseInt(elapsedTime / 1000, 10);
+
+                if (secondsElapsed <= 60) {
+                    this.elapsedTime = `${secondsElapsed} giây`;
+                } else {
+                    const minutesElapsed = parseInt(secondsElapsed / 60, 10);
+                    if (minutesElapsed < 60) {
+                        this.elapsedTime = `${minutesElapsed} phút`;
+                    } else {
+                        const hoursElapsed = parseInt(minutesElapsed / 60, 10);
+                        if (hoursElapsed < 24) {
+                            this.elapsedTime = `${hoursElapsed} giờ`;
+                        } else {
+                            const daysElapsed = parseInt(hoursElapsed / 24, 10);
+                            this.elapsedTime = `${daysElapsed} ngày`;
+                        }
+                    }
+                }
+            },
         },
         watch: {
             options: {
@@ -339,7 +382,15 @@
 <style scoped>
     @import '@/assets/css/WebListPost.css';
 
-    .ct-display{
+    .ct-display {
         display: grid !important;
+    }
+
+    .v-card.on-hover.v-theme--dark {
+        background-color: rgba(#FFF, 0.8)
+    }
+
+    .v-card__text {
+        color: #000
     }
 </style>

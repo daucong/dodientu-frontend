@@ -68,6 +68,7 @@
                                     <span class="font-weight-bold">Loại tin: {{post.typePost.typePostName}}</span>
                                     <span class="font-weight-bold mt-3">Giá loại tin: {{formatCurrency(post.postPrice)}} VNĐ</span>
                                     <span class="font-weight-bold mt-3">Thời hạn tin: {{post.postDate}} ~ {{post.endDate}}</span>
+                                    <span class="font-weight-bold mt-3">Số lượng: {{post.quantity}} sản phẩm</span>
                                 </div>
                                 <p class="card-text sdt-card-text mt-3 font-weight-bold">Mô tả chi tiết</p>
                                 <p class="card-text sdt-card-text mt-3">{{post.description}}</p>

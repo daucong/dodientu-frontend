@@ -23,7 +23,7 @@
                                         v-model="post.title"
                                         placeholder="Nhập tiêu đề"
                                         variant="outlined"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                 ></v-text-field>
                             </div>
@@ -40,7 +40,7 @@
                                         variant="outlined"
                                         density="comfortable"
                                         class="select-option"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                 ></v-select>
                             </div>
@@ -53,7 +53,7 @@
                                         placeholder="Nhập số lượng"
                                         variant="outlined"
                                         type="number"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                 ></v-text-field>
                             </div>
@@ -70,7 +70,7 @@
                                         variant="outlined"
                                         density="comfortable"
                                         class="select-option"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                         @update:modelValue=onChangeProvince
                                 ></v-select>
@@ -88,7 +88,7 @@
                                         density="comfortable"
                                         class="select-option"
                                         ref="selectedDistrict"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                         @update:modelValue=onChangeDistrict
                                 ></v-select>
@@ -107,7 +107,7 @@
                                         density="comfortable"
                                         class="select-option"
                                         ref="selectedWard"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                 ></v-select>
                             </div>
@@ -118,7 +118,7 @@
                                         v-model="post.address"
                                         :placeholder="$t('form.place-text')"
                                         variant="outlined"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                 ></v-text-field>
                             </div>
@@ -143,7 +143,7 @@
                                         placeholder="Nhập giá tiền"
                                         variant="outlined"
                                         @input="handleInput"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                 ></v-text-field>
                             </div>
@@ -155,7 +155,7 @@
                                         counter
                                         :placeholder="$t('form.place-area')"
                                         variant="outlined"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         @input="validateForm"
                                 ></v-textarea>
                             </div>
@@ -343,7 +343,7 @@
                                             v-model="post.address"
                                             :placeholder="$t('form.place-text')"
                                             variant="outlined"
-                                            :rules="rules"
+                                            :rules="rulesDefault"
                                             :readonly="loading"
                                     ></v-text-field>
                                 </div>
@@ -356,7 +356,7 @@
                                                 v-model="post.emailContact"
                                                 :placeholder="$t('form.place-text')"
                                                 variant="outlined"
-                                                :rules="rules"
+                                                :rules="rulesDefault"
                                                 :readonly="loading"
                                         ></v-text-field>
                                     </div>
@@ -367,7 +367,7 @@
                                                 v-model="post.sdtContact"
                                                 :placeholder="$t('form.place-text')"
                                                 variant="outlined"
-                                                :rules="rules"
+                                                :rules="rulesDefault"
                                                 :readonly="loading"
                                         ></v-text-field>
                                     </div>
@@ -421,7 +421,7 @@
                     },
                 ],
                 validate: true,
-                rules: [
+                rulesDefault: [
                     v => !!v || this.$t('rules.require.rules'),
                 ],
                 changeImg: true,
@@ -663,6 +663,7 @@
                 }
                 let bigDecimalValue = tam + '.00';
                 this.post.price = bigDecimalValue
+                this.post.category = {id: this.post.category},
                 PostService.add(this.post)
                     .then(response => {
                         let id = response.data.id
@@ -727,6 +728,11 @@
                             this.date = new Date()
                             daysDifference = 7
                             this.typePost = this.post.typePost
+                        }
+                        if (this.post.status === 4) {
+                            this.blockEdit = false
+                            this.date = new Date()
+                            daysDifference = 7
                         }
 
                         if (checkDate === "Hết hạn") {

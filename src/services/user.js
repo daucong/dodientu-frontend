@@ -29,6 +29,10 @@ class UserService {
         return http.post("/user/v1/payment", data);
     }
 
+    paymentNotOtp(data) {
+        return http.post("/user/v1/paymentNotOtp", data);
+    }
+
     payPost(data) {
         return http.post("/user/v1/payPost", data);
     }
@@ -39,6 +43,10 @@ class UserService {
 
     bonusAdmin(data) {
         return http.post("/user/v1/bonusAdmin", data);
+    }
+
+    setStatus(id, status) {
+        return http.post("/user/v1/setStatus?id=", id + "?status=", status);
     }
 
 }

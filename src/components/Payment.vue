@@ -268,7 +268,7 @@
                             icon: this.$t('message.swal.icon.success'),
                             timer: 5000,
                         })
-                        this.$router.push("/home");
+                        this.$router.push("/ddt/home");
                     } else {
                         swal({
                             text: data.message,

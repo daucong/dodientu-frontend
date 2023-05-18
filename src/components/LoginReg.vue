@@ -750,7 +750,7 @@
         ,
         created() {
             if (this.loggedIn) {
-                this.$router.push("/home");
+                this.$router.push("/ddt/home");
             }
             this.$i18n.locale = this.language
             window.localStorage.setItem('language', this.language);

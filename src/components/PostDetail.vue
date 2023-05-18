@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid p-0">
         <Header/>
-        <Menu/>
+        <Menu :bell="cartList"/>
         <div class="container">
             <div class="sdt-post-detail">
                 <div class="">
@@ -31,8 +31,11 @@
                                     v-for="item in post.images"
                                     :key="item.id"
                                     cover
-                            ><div class="d-flex justify-content-center"><img :src=getUrlImage(item.urlImage)
-                                       style="height: 200px" alt="item.nameImage"></div></v-carousel-item>
+                            >
+                                <div class="d-flex justify-content-center"><img :src=getUrlImage(item.urlImage)
+                                                                                style="height: 200px"
+                                                                                alt="item.nameImage"></div>
+                            </v-carousel-item>
                         </v-carousel>
                     </div>
                 </div>
@@ -46,8 +49,8 @@
                     <div class="mt-2">
                         <small class="">
                             <i class="fa-regular fa-clock pe-1"></i>
-                            <span v-if="dateDiff(post.postDate) < 1"> {{ $t('menu.today') }}</span>
-                            <span v-else> {{ dateDiff(post.postDate) }} {{ $t('news.day-ago') }}</span>
+                            {{calculateElapsedTime(post.postDate)}}
+                            {{elapsedTime }} trước
                         </small>
                         <small class="px-2"><i class="fa-regular fa-eye"></i>
                             {{post.viewCount}} {{ $t('form.label-viewCount') }}
@@ -64,11 +67,6 @@
                         <div class="card sdt-post-base-information">
                             <div class="card-body p-4">
                                 <h5 class="card-title sdt-card-title">THÔNG TIN MÔ TẢ</h5>
-                                <div class="sdt-card-text d-grid">
-                                    <span class="font-weight-bold">Loại tin: {{post.typePost.typePostName}}</span>
-                                    <span class="font-weight-bold mt-3">Giá loại tin: {{formatCurrency(post.postPrice)}} VNĐ</span>
-                                    <span class="font-weight-bold mt-3">Thời hạn tin: {{post.postDate}} ~ {{post.endDate}}</span>
-                                </div>
                                 <p class="card-text sdt-card-text mt-3 font-weight-bold">Mô tả chi tiết</p>
                                 <p class="card-text sdt-card-text mt-3">{{post.description}}</p>
                             </div>
@@ -95,6 +93,16 @@
                             </div>
                         </div>
                     </div>
+                    <v-overlay
+                            :model-value="overlay"
+                            class="align-center justify-center"
+                    >
+                        <v-progress-circular
+                                color="white"
+                                indeterminate
+                                size="64"
+                        ></v-progress-circular>
+                    </v-overlay>
                     <div class="col-4 mt-4 card sdt-post-base-information">
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -129,6 +137,82 @@
                     </div>
                 </div>
             </div>
+
+            <div v-if="showPay" class="text-center mt-2">
+                <v-btn
+                        rounded="lg"
+                        color="danger"
+                        class="me-3"
+                        type="submit"
+                        :loading="loading"
+                        @click="loggedIn == null ? $router.push({name:'login'}) : dialog = !dialog"
+                >
+                    <span class="text-white">Mua hàng</span>
+                </v-btn>
+            </div>
+            <v-dialog
+                    persistent
+                    v-model="dialog"
+                    transition="dialog-top-transition"
+                    class="dialog-forgotPass"
+            >
+                <v-card>
+                    <v-form
+                            v-model="form"
+                            @submit.prevent="saveToCart"
+                    >
+                        <v-toolbar
+                                class="toolbar-forgotPass"
+                        >
+                            <span class="txt-header-forgotPass">Thông tin mua hàng</span>
+                            <v-btn
+                                    icon
+                                    dark
+                                    @click="dialog = false"
+                                    class="btn-ext-dialog"
+                            >
+                                <v-icon>mdi:mdi-close</v-icon>
+                            </v-btn>
+                        </v-toolbar>
+                        <v-divider></v-divider>
+                        <v-text-field
+                                v-model="post.title"
+                                :readonly="loading"
+                                class="forgot-email-txt"
+                                clearable
+                                label="Tên sản phẩm"
+                                variant="outlined"
+                                disabled
+                        ></v-text-field>
+                        <v-text-field
+                                v-model="formItem.qualityPay"
+                                :readonly="loading"
+                                class="forgot-email-txt"
+                                clearable
+                                label="Nhập số lượng"
+                                variant="outlined"
+                                type="number"
+                                :rules="[requiredD]"
+                                @update:modelValue="checkQuality"
+                        ></v-text-field>
+                        <span v-if="requiredTotalMoney" class="text-red-darken-2 ms-1">Tổng tiền: {{formatCurrency(totalMoney)}} VNĐ</span>
+                        <span v-if="requiredQuality" class="text-red-darken-2 ms-1">Số lượng vượt quá giới hạn</span>
+                        <div class="group-btn-forgotPass">
+                            <v-btn
+                                    :disabled="!form"
+                                    :loading="loading"
+                                    color="info"
+                                    type="submit"
+                                    variant="flat"
+                                    class="btn-forgotPass"
+                            >
+                                <span class="txt-forgotPass"> <v-icon icon="mdi:mdi-cart-variant me-3"
+                                                                      style="font-size:25px !important; cursor: pointer"/></span>
+                            </v-btn>
+                        </div>
+                    </v-form>
+                </v-card>
+            </v-dialog>
             <div class="mt-3"></div>
             <Footer/>
         </div>
@@ -146,12 +230,20 @@
     import PostService from "../services/post";
     import CategoryService from "../services/category";
     import UserService from "../services/user";
+    import CartService from "../services/cart"
 
     export default {
         name: "PostDetail",
         components: {Header, Menu, Footer},
         data() {
             return {
+                requiredD(v) {
+                    return !!v || this.$t('rules.require.rules')
+                },
+                form: false,
+                loading: false,
+                dialog: false,
+                overlay: false,
                 items: [
                     {
                         title: this.$t('table.user.hrefHome'),
@@ -204,23 +296,98 @@
                         id: null
                     }
                 },
-                user: []
+                user: [],
+                formItem: [],
+                requiredQuality: false,
+                requiredTotalMoney: false,
+                totalMoney: "",
+                loggedIn: "",
+                showPay: true,
+                elapsedTime: '',
+                interval: null,
             }
         },
+        watch: {
+            'formItem[quality]'() {
+                if (this.formItem['quality'] === ""){
+                    this.form = false
+                }else {
+                    this.checkQuality()
+                }
+
+            }
+        },
+
         created() {
-            var paramID = this.$route.params.id;
-            if (typeof (paramID) !== 'undefined') {
-                this.findByID(paramID);
+            var paramTitle = this.$route.params.title;
+            if (typeof (paramTitle) !== 'undefined') {
+                this.findByTitle(paramTitle);
             }
             this.imageThumbnail = this.post.thumbnail
-            this.countView(paramID)
+
         },
         mounted() {
+            let data = JSON.parse(localStorage.getItem("user"))
+            this.loggedIn = data
             this.getCategory()
-            this.post.postDate = this.formatDate(new Date(this.post.postDate))
-            this.post.endDate = this.formatDate(new Date(this.post.endDate))
         },
         methods: {
+            saveToCart() {
+                var data = {
+                    post: {id: this.post.id},
+                    qualityPay: this.formItem.qualityPay,
+                    totalPrice: this.totalMoney,
+                    userId: this.loggedIn.id
+                }
+                var CartDTO = {
+                    postId: data.post.id,
+                    userId: data.userId
+                }
+                CartService.findByPostId(CartDTO).then((response) => {
+                    if (response.data.length !== 0){
+                        var dataNew = {
+                            id: response.data.id,
+                            post: {id: this.post.id},
+                            qualityPay: parseInt(this.formItem.qualityPay) + parseInt(response.data.qualityPay),
+                            totalPrice: this.totalMoney,
+                            userId: this.loggedIn.id
+                        }
+                        CartService.addCart(dataNew).then(() => {
+                            this.$router.push({name: 'cart'})
+                        })
+                    }
+                    else {
+                        CartService.addCart(data).then(() => {
+                            this.$router.push({name: 'cart'})
+                        })
+                    }
+                })
+
+            },
+            checkQuality() {
+                if (this.formItem.qualityPay.includes("--")) {
+                    this.formItem.qualityPay = this.formItem.qualityPay.replace("--", "");
+                    this.form = false
+                }
+                if (this.formItem.qualityPay <= 0){
+                    this.formItem.qualityPay = ""
+                    this.form = false
+                }
+                else {
+                    if (this.formItem.qualityPay > this.post.quantity) {
+                        this.form = false
+                        this.requiredQuality = true
+                        this.requiredTotalMoney = false
+                    } else {
+                        this.requiredQuality = false
+                        this.requiredTotalMoney = true
+                        this.form = true
+                        var quality = this.formItem.qualityPay + '.00'
+                        var data = this.post.price * quality
+                        this.totalMoney = data
+                    }
+                }
+            },
             findUserById(id) {
                 UserService.findUserById(id).then(reponse => {
                     this.user = reponse.data
@@ -275,17 +442,45 @@
                     })
             },
 
-            findByID(id) {
-                var params = {};
-                params["isDelete"] = 'false';
-                PostService.findByID(params, id)
+            findByTitle(title) {
+                PostService.findByTitle(title)
                     .then(response => {
                         this.post = response.data;
+                        this.countView(response.data.id)
                         this.findUserById(response.data.userId)
+
+                        let data = JSON.parse(localStorage.getItem("user"))
+                        if (response.data.userId === data.id) {
+                            this.showPay = false
+                        }
                     })
                     .catch(e => {
                         this.notification(e.response.data.message, "error");
                     });
+            },
+            calculateElapsedTime(postDate) {
+                const currentTime = new Date();
+                const inputTime = new Date(postDate);
+
+                const elapsedTime = currentTime - inputTime;
+                const secondsElapsed = parseInt(elapsedTime / 1000, 10);
+
+                if (secondsElapsed <= 60) {
+                    this.elapsedTime = `${secondsElapsed} giây`;
+                } else {
+                    const minutesElapsed = parseInt(secondsElapsed / 60, 10);
+                    if (minutesElapsed < 60) {
+                        this.elapsedTime = `${minutesElapsed} phút`;
+                    } else {
+                        const hoursElapsed = parseInt(minutesElapsed / 60, 10);
+                        if (hoursElapsed < 24) {
+                            this.elapsedTime = `${hoursElapsed} giờ`;
+                        } else {
+                            const daysElapsed = parseInt(hoursElapsed / 24, 10);
+                            this.elapsedTime = `${daysElapsed} ngày`;
+                        }
+                    }
+                }
             },
         },
     }

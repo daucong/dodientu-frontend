@@ -73,6 +73,12 @@
                                             {{ $t('header.recharge') }}
                                         </v-btn>
                                     </v-list-item>
+                                    <v-list-item>
+                                        <v-btn variant="text" prepend-icon="fa fa-light fa-cart-shopping"
+                                               @click="gotoPurchase">
+                                            Đơn mua
+                                        </v-btn>
+                                    </v-list-item>
                                     <v-divider></v-divider>
                                     <v-list-item>
                                         <v-btn variant="text" @click="logOut" prepend-icon="fa fal fa-sign-out-alt">
@@ -181,6 +187,11 @@
                 this.$router.push({
                     name: 'recharge',
                     params: {id: this.id}
+                })
+            },
+            gotoPurchase(){
+                this.$router.push({
+                    name: 'purchase'
                 })
             }
         },

@@ -4,7 +4,7 @@
             <v-icon icon="fa fa-angle-left sidebar" @click="showMenu()"/>
             <div class="account d-flex">
                 <div class="avatar">
-                    <img src="../assets/images/avatar.jpeg">
+                    <img src="../assets/images/avt.jpg">
                 </div>
                 <div class="info">
                     <h3 class="name">{{firstName +" "+ lastName}}</h3>
@@ -166,7 +166,7 @@
                 let data = JSON.parse(localStorage.getItem("user"))
                 let id = data.id;
                 UserService.findUserById(id).then((response) => {
-                    this.surplus = response.data.surplus
+                    this.surplus = response.data.surplus === null ? 0 : response.data.surplus
                     const amount = parseInt(this.surplus.toString().replace(/\D/g, ""));
                     this.surplus =  new Intl.NumberFormat("de-DE", {
                         style: "currency",

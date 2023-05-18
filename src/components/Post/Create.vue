@@ -18,7 +18,7 @@
                                         v-model="formItem.projectName"
                                         placeholder="Nhập tiêu đề"
                                         variant="outlined"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                 ></v-text-field>
                             </div>
@@ -35,7 +35,7 @@
                                         variant="outlined"
                                         density="comfortable"
                                         class="select-option"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                 ></v-select>
                             </div>
@@ -48,7 +48,7 @@
                                         placeholder="Nhập số lượng"
                                         variant="outlined"
                                         type="number"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                 ></v-text-field>
                             </div>
@@ -61,7 +61,7 @@
                                         placeholder="Nhập giá tiền"
                                         variant="outlined"
                                         @input="handleInput"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                 ></v-text-field>
                             </div>
@@ -74,7 +74,7 @@
                                               variant="outlined"
                                               prepend-icon="mdi:mdi-camera"
                                               @change="onFileChange" v-model="image" ref="thumbnail"
-                                              :rules="rules"
+                                              :rules="rulesDefault"
                                               required></v-file-input>
                                 <div class="bg-white br-none">
                                     <v-img class="rounded ct-multi-img" v-if="image.length > 0"
@@ -103,7 +103,7 @@
                                             @change="onChange"
                                             ref="file"
                                             accept=".pdf,.jpg,.jpeg,.png"
-                                            :rules="rules"
+                                            :rules="rulesDefault"
                                     />
                                     <label for="fileInput" class="file-label">
                                         <div class="pa-5">
@@ -142,7 +142,7 @@
                                         counter
                                         :placeholder="$t('form.place-area')"
                                         variant="outlined"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                 ></v-textarea>
                             </div>
@@ -157,7 +157,7 @@
                                         variant="outlined"
                                         density="comfortable"
                                         class="select-option"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                         @update:modelValue=onChangeTypePost
                                 ></v-select>
@@ -180,7 +180,7 @@
                                             :clearable="false"
                                             :enable-time-picker="false"
                                             :min-date="new Date()"
-                                            :rules="rules"
+                                            :rules="rulesDefault"
                                             :readonly="loading"
                                             :placeholder="$t('form.place-select')" required/>
                             </div>
@@ -192,7 +192,7 @@
                                         :placeholder="$t('form.place-text')"
                                         required
                                         variant="outlined"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                 ></v-text-field>
                                 <v-subheader class="text-label-form">{{ $t('post-form.post-value') }}: {{ money }}VNĐ
                                 </v-subheader>
@@ -218,7 +218,7 @@
                                                 variant="outlined"
                                                 density="comfortable"
                                                 class="select-option"
-                                                :rules="rules"
+                                                :rules="rulesDefault"
                                                 :readonly="loading"
                                                 @update:modelValue=onChangeProvince
                                         ></v-select>
@@ -236,7 +236,7 @@
                                                 density="comfortable"
                                                 class="select-option"
                                                 ref="selectedDistrict"
-                                                :rules="rules"
+                                                :rules="rulesDefault"
                                                 :readonly="loading"
                                                 @update:modelValue=onChangeDistrict
                                         ></v-select>
@@ -255,7 +255,7 @@
                                                 density="comfortable"
                                                 class="select-option"
                                                 ref="selectedWard"
-                                                :rules="rules"
+                                                :rules="rulesDefault"
                                                 :readonly="loading"
                                         ></v-select>
                                     </div>
@@ -268,7 +268,7 @@
                                         v-model="formItem.address"
                                         :placeholder="$t('form.place-text')"
                                         variant="outlined"
-                                        :rules="rules"
+                                        :rules="rulesDefault"
                                         :readonly="loading"
                                 ></v-text-field>
                             </div>
@@ -280,7 +280,7 @@
                                             v-model="post.emailContact"
                                             :placeholder="$t('form.place-text')"
                                             variant="outlined"
-                                            :rules="rules"
+                                            :rules="rulesDefault"
                                             :readonly="loading"
                                     ></v-text-field>
                                 </div>
@@ -291,7 +291,7 @@
                                             v-model="post.sdtContact"
                                             :placeholder="$t('form.place-text')"
                                             variant="outlined"
-                                            :rules="rules"
+                                            :rules="rulesDefault"
                                             :readonly="loading"
                                     ></v-text-field>
                                 </div>
@@ -337,7 +337,7 @@
                         color: "#1479FF",
                     },
                 ],
-                rules: [
+                rulesDefault: [
                     v => !!v || this.$t('rules.require.rules'),
                 ],
                 validate: false,
@@ -426,7 +426,7 @@
 
                 this.post.postPrice = this.typePost.typePostPrice * this.activateDate * 1000
 
-                const value = this.post.price
+                const value = this.formItem.money
 
                 let cleanedString = value.trim().replace(/,/g, '');
                 let decimalSplit = cleanedString.split('.');

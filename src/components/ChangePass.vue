@@ -66,7 +66,7 @@
                     {
                         title: this.$t('table.user.hrefHome'),
                         disabled: false,
-                        href: '/home'
+                        href: '/ddt/home'
                     },
                     {
                         title: this.$t('changePass'),
@@ -105,7 +105,7 @@
                 };
                 UserService.updateUserPassword(data)
                     .then(() => {
-                        this.$router.push("/home");
+                        this.$router.push("/ddt/home");
                         swal({
                             text: this.$t('message.swal.txt_pass'),
                             icon: this.$t('message.swal.icon.success'),

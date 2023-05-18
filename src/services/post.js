@@ -19,6 +19,10 @@ class PostService {
         return http.get("/dodientu/v1/post" + `/${id}`, {params: params});
     }
 
+    findByTitle(title) {
+        return http.get("/dodientu/v1/post/detail?title="+ title);
+    }
+
     add(data) {
         return http.post("/dodientu/v1/post", data);
     }
@@ -47,9 +51,10 @@ class PostService {
         return http.post("/dodientu/v1/post/countAccess", id);
     }
 
-    setStatusPlus(id) {
-        return http.post("/dodientu/v1/post/setStatusPlus", id);
+    subtractCheckout(data) {
+        return http.post("/dodientu/v1/post/subtractCheckout", data);
     }
+
 }
 
 export default new PostService();
