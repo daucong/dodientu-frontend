@@ -88,6 +88,17 @@
                             <a class="d-block"><span class="click-user" @click="gotoListUser">{{ $t('sidebar.admin.user.title') }}</span></a>
                         </v-expansion-panel-text>
                     </v-expansion-panel>
+
+                    <v-expansion-panel v-if="showAdminBoard">
+                        <v-expansion-panel-title expand-icon="fa fa-angle-down" collapse-icon="fa fa-angle-up"
+                                                 class="panel-title-sidebar">
+                            <v-icon icon="fa fa-chart-bar sidebar"/>&nbsp; Thông kê sản phẩm
+                        </v-expansion-panel-title>
+                        <v-expansion-panel-text>
+                            <a class="d-block"><span class="click-user" @click="gotoReportMonth">Theo tháng</span></a>
+                            <a class="d-block"><span class="click-user" @click="gotoReportProvice">Theo tỉnh thành</span></a>
+                        </v-expansion-panel-text>
+                    </v-expansion-panel>
                 </v-expansion-panels>
             </div>
         </div>
@@ -182,6 +193,16 @@
             gotoRecharge() {
                 this.$router.push({
                     name: 'recharge',
+                })
+            },
+            gotoReportMonth(){
+                this.$router.push({
+                    name: 'report-month',
+                })
+            },
+            gotoReportProvice(){
+                this.$router.push({
+                    name: 'report-provice',
                 })
             }
         }

@@ -22,6 +22,8 @@ import TypePost from "./components/Categories/TypePost"
 import Province from "./components/Categories/Province"
 import District from "./components/Categories/District"
 import Ward from "./components/Categories/Ward"
+import ReportByMonth from "./components/Report/Mounth"
+import ReportByProvice from "./components/Report/Provice"
 
 const routes = [
     {
@@ -49,6 +51,8 @@ const routes = [
             {path: 'district', name: 'district', component: District},
             {path: 'ward', name: 'ward', component: Ward},
             {path: 'typepost', name: 'typepost', component: TypePost},
+            {path: 'report/month', name: 'report-month', component: ReportByMonth},
+            {path: 'report/provice', name: 'report-provice', component: ReportByProvice},
         ]
     },
     {path: '/ddt/admin/postdetail/:id', name: "post-detail-admin", component: PostDetailAdmin},

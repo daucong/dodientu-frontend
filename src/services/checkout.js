@@ -33,6 +33,10 @@ class checkoutService {
     setStatus(data) {
         return http.post("/dodientu/v1/checkout/setStatus", data);
     }
+
+    findByIdDetail(id) {
+        return http.get("/dodientu/v1/checkout/detailId/" + `/${id}`);
+    }
 }
 
 export default new checkoutService();

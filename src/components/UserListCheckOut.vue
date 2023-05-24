@@ -51,7 +51,8 @@
                         <td>{{index + 1}}</td>
                         <td>{{item.post.title}}</td>
                         <td>{{item.hoTen}}</td>
-                        <td>{{item.dataCart.qualityPay}}</td>
+                        <td v-if="item.status===1">{{item.dataCart.qualityPay}} / {{item.totalQuality}}</td>
+                        <td v-else>{{item.dataCart.qualityPay}}</td>
                         <td>{{formatCurrency(item.dataCart.totalPrice)}}</td>
                         <td>{{item.dataCart.type}}</td>
                         <td><img :src=getUrlImage(item.post.thumbnail)
@@ -132,45 +133,49 @@
                         </v-toolbar>
                         <v-divider></v-divider>
 
-                        <div class="d-grid">
-                            <h3>Thông tin người nhận</h3>
-                            <div>
-                                <div class="d-flex">
-                                    <span>Họ tên: </span>
-                                    <span class="ml-1">{{infoCheckOut[0].dataCheckOutForId.hoTen}}</span>
-                                </div>
-                                <div class="d-flex">
-                                    <span>Số điện thoại: </span>
-                                    <span class="ml-1">{{infoCheckOut[0].dataCheckOutForId.phone}}</span>
-                                </div>
-                                <div class="d-flex">
-                                    <span>Địa chỉ: </span>
-                                    <span class="ml-1">{{infoCheckOut[0].dataCheckOutForId.ward.name}},
+                        <div class="d-grid" style="background: aliceblue;">
+                            <div class="" >
+                                <h3>Thông tin người nhận</h3>
+                                <div class="ml-4">
+                                    <div class="d-flex">
+                                        <span>- Họ tên: </span>
+                                        <span class="ml-1">{{infoCheckOut[0].dataCheckOutForId.hoTen}}</span>
+                                    </div>
+                                    <div class="d-flex">
+                                        <span>- Số điện thoại: </span>
+                                        <span class="ml-1">{{infoCheckOut[0].dataCheckOutForId.phone}}</span>
+                                    </div>
+                                    <div class="d-flex">
+                                        <span>- Địa chỉ: </span>
+                                        <span class="ml-1">{{infoCheckOut[0].dataCheckOutForId.ward.name}},
                                             {{infoCheckOut[0].dataCheckOutForId.ward.district.name}},
                                             {{infoCheckOut[0].dataCheckOutForId.ward.district.province.name}}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <h3>Thông tin đơn hàng</h3>
-                            <div>
-                                <div class="d-flex">
-                                    <span>Tài khoản mua hàng: </span>
-                                    <span class="ml-1">{{infoCheckOut[0].dataDetailForId.hoTen}}</span>
-                                </div>
-                                <div class="d-flex">
-                                    <span>Tên sản phẩm: </span>
-                                    <span class="ml-1">{{infoCheckOut[0].dataDetailForId.post.title}}</span>
-                                </div>
-                                <div class="d-flex">
-                                    <span>Số lượng mua: </span>
-                                    <span class="ml-1">{{infoCheckOut[0].dataDetailForId.dataCart.qualityPay}} sản phẩm</span>
-                                </div>
-                                <div class="d-flex">
-                                    <span>Tổng tiền: </span>
-                                    <span class="ml-1">{{formatCurrency(infoCheckOut[0].dataDetailForId.dataCart.totalPrice)}} đ</span>
-                                </div>
-                                <div class="d-flex">
-                                    <span>Phương thức thanh toán: </span>
-                                    <span class="ml-1">{{infoCheckOut[0].dataDetailForId.dataCart.type}}</span>
+                            <div class="mt-4">
+                                <h3>Thông tin đơn hàng</h3>
+                                <div class="ml-4">
+                                    <div class="d-flex">
+                                        <span>- Tài khoản mua hàng: </span>
+                                        <span class="ml-1">{{infoCheckOut[0].dataDetailForId.hoTen}}</span>
+                                    </div>
+                                    <div class="d-flex">
+                                        <span>- Tên sản phẩm: </span>
+                                        <span class="ml-1">{{infoCheckOut[0].dataDetailForId.post.title}}</span>
+                                    </div>
+                                    <div class="d-flex">
+                                        <span>- Số lượng mua: </span>
+                                        <span class="ml-1">{{infoCheckOut[0].dataDetailForId.dataCart.qualityPay}} sản phẩm</span>
+                                    </div>
+                                    <div class="d-flex">
+                                        <span>- Tổng tiền: </span>
+                                        <span class="ml-1">{{formatCurrency(infoCheckOut[0].dataDetailForId.dataCart.totalPrice)}} đ</span>
+                                    </div>
+                                    <div class="d-flex">
+                                        <span>- Phương thức thanh toán: </span>
+                                        <span class="ml-1">{{infoCheckOut[0].dataDetailForId.dataCart.type}}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -326,6 +331,7 @@
                             params["isDelete"] = 'false';
                             PostService.findByID(params, idPost)
                                 .then(response => {
+                                    let totalQuality = response.data.quantity
                                     let dataPost = response.data
                                     let user = JSON.parse(localStorage.getItem("user"))
                                     if (dataCart.userId === user.id) {
@@ -338,6 +344,7 @@
                                                 post: dataPost,
                                                 dataCart: dataCart,
                                                 hoTen: hoTen,
+                                                totalQuality: totalQuality,
                                                 status: 0
                                             })
                                         })
@@ -352,6 +359,7 @@
                                             this.listCheckOut.push({
                                                 post: dataPost,
                                                 dataCart: dataCart,
+                                                totalQuality: totalQuality,
                                                 hoTen: hoTen,
                                                 status: 1
                                             })
@@ -392,15 +400,23 @@
                 }
                 CheckOutService.setStatus(data)
                     .then(() => {
-                        this.dialogDestroy = false;
-                        swal({
-                            text: "Xác nhận đơn hàng thành công",
-                            icon: "success",
-                            timer: 5000,
-                        }).then(result => {
-                            if (result) {
-                                this.tab = 3
+                        CheckOutService.findByIdDetail(this.idDetailCart).then(response=>{
+                            let data = {
+                                postId: response.data.postId,
+                                quality: response.data.qualityPay
                             }
+                            PostService.plusCheckout(data)
+
+                            this.dialogDestroy = false;
+                            swal({
+                                text: "Từ chối đơn hàng thành công",
+                                icon: "success",
+                                timer: 5000,
+                            }).then(result => {
+                                if (result) {
+                                    this.tab = 3
+                                }
+                            })
                         })
                     })
                     .catch(e => {
@@ -491,6 +507,9 @@
                 }
                 if (status == 2) {
                     return "Đã giao"
+                }
+                if (status == 2) {
+                    return "Đã hủy"
                 }
             },
 

@@ -55,6 +55,18 @@ class PostService {
         return http.post("/dodientu/v1/post/subtractCheckout", data);
     }
 
+    plusCheckout(data) {
+        return http.post("/dodientu/v1/post/plusCheckout", data);
+    }
+
+    countPostByMount() {
+        return http.get("/dodientu/v1/post/post-by-mounth");
+    }
+
+    countPostByProvince() {
+        return http.get("/dodientu/v1/post/post-by-province");
+    }
+
 }
 
 export default new PostService();
