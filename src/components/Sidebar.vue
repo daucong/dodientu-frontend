@@ -97,6 +97,8 @@
                         <v-expansion-panel-text>
                             <a class="d-block"><span class="click-user" @click="gotoReportMonth">Theo tháng</span></a>
                             <a class="d-block"><span class="click-user" @click="gotoReportProvice">Theo tỉnh thành</span></a>
+                            <a class="d-block"><span class="click-user" @click="gotoReportAdminDuyet">Theo bài đăng được duyệt</span></a>
+                            <a class="d-block"><span class="click-user" @click="gotoReportUserPayment">Theo người dùng mua</span></a>
                         </v-expansion-panel-text>
                     </v-expansion-panel>
                 </v-expansion-panels>
@@ -203,6 +205,16 @@
             gotoReportProvice(){
                 this.$router.push({
                     name: 'report-provice',
+                })
+            },
+            gotoReportUserPayment(){
+                this.$router.push({
+                    name: 'report-payment',
+                })
+            },
+            gotoReportAdminDuyet(){
+                this.$router.push({
+                    name: 'report-browse',
                 })
             }
         }

@@ -37,6 +37,10 @@ class checkoutService {
     findByIdDetail(id) {
         return http.get("/dodientu/v1/checkout/detailId/" + `/${id}`);
     }
+
+    findByReportUserToPayment() {
+        return http.get("/dodientu/v1/checkout/reportUserToPayment");
+    }
 }
 
 export default new checkoutService();

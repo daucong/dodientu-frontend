@@ -39,8 +39,7 @@
             <v-tab @click="refuse = false,setRefuse()" :value="4">Đã xóa</v-tab>
         </v-tabs>
 
-
-        <v-table fixed-header lg="12" id="table" class="br-none bg-white">
+        <v-table fixed-header lg="12" id="table" class="table-cart">
             <thead class="bg-primary-tb text-tb-header">
             <tr>
                 <th class="color-tb bg-primary-tb">

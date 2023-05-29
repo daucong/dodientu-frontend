@@ -67,7 +67,7 @@
                                         <div class="">
                                             <div class="card-body ct-display text-center">
                                                 <h5 class="card-title font-weight-bold" style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis;max-width: 200px;">{{entry.title}}</h5>
-                                                <div class="sdt-card-text-header pb-2">
+                                                <div class="sdt-card-text-header pb-2 d-flex">
                                                     <span class="text-red">{{formatCurrency(entry.price)}} VNĐ</span>
                                                     <span class="float-end">
                                                 <span class="point"></span>
@@ -125,7 +125,7 @@
                                         <div class="">
                                             <div class="card-body ct-display text-center">
                                                 <h5 class="card-title font-weight-bold " style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 200px;">{{entry.title}}</h5>
-                                                <div class="sdt-card-text-header pb-2">
+                                                <div class="sdt-card-text-header pb-2 d-flex">
                                                     <span class="text-red">{{formatCurrency(entry.price)}} VNĐ</span>
                                                     <span class="float-end">
                                                 <span class="point"></span>

@@ -11,6 +11,7 @@
 
 span.float-right.promotion, span.float-right.main {
     font-weight: 600;
+    font-family: "Material Design Icons";
 }
 
 .big-side-bar {
@@ -140,7 +141,7 @@ h3.name {
 a.d-block {
     padding: 5px;
     color: black;
-    font-family: raleway;
+    font-family: "Material Design Icons";
     font-size: 14px;
     font-weight: 500;
 }

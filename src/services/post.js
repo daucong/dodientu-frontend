@@ -67,6 +67,10 @@ class PostService {
         return http.get("/dodientu/v1/post/post-by-province");
     }
 
+    findByReportToDuyet() {
+        return http.get("/dodientu/v1/post/reportToDuyet");
+    }
+
 }
 
 export default new PostService();
