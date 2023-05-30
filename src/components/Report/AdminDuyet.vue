@@ -26,7 +26,13 @@
             </tr>
             </tbody>
         </v-table>
+        <v-divider></v-divider>
+        <div class="d-flex justify-content-between">
+            <span style="color: #929292">Tổng số đơn hàng: <span style="color:#ee4d2d;">{{countReport}} đơn</span></span>
+            <span style="color: #929292">Tổng tiền nhận được: <span style="color:#ee4d2d;">{{formatCurrency(totalMoney)}} đ</span></span>
+        </div>
     </v-col>
+
 </template>
 <script>
 
@@ -76,6 +82,8 @@
                     },
                 ],
                 reports: [],
+                countReport:"",
+                totalMoney:""
             }
         },
         mounted() {
@@ -87,14 +95,16 @@
                     let data = response.data;
 
                     let size = response.data.length
+                    let money = 0
                     for (let i = 0; i < size; i++) {
-
+                        money = money + response.data[i].totalMoneyToTypePost
                         UserService.findUserById(response.data[i].post.userId).then((response) => {
                             let nameUser = response.data.firstName + " " + response.data.lastName
                             this.reports.push({nameUser: nameUser, dataReport: data})
                         })
                     }
-
+                    this.totalMoney = money
+                    this.countReport = size
                 });
             },
             formatCurrency(money) {

@@ -98,7 +98,7 @@
                             <a class="d-block"><span class="click-user" @click="gotoReportMonth">Theo tháng</span></a>
                             <a class="d-block"><span class="click-user" @click="gotoReportProvice">Theo tỉnh thành</span></a>
                             <a class="d-block"><span class="click-user" @click="gotoReportAdminDuyet">Theo bài đăng được duyệt</span></a>
-                            <a class="d-block"><span class="click-user" @click="gotoReportUserPayment">Theo người dùng mua</span></a>
+                            <a class="d-block"><span class="click-user" @click="gotoReportUserPayment">Theo đơn hàng thanh toán thành công</span></a>
                         </v-expansion-panel-text>
                     </v-expansion-panel>
                 </v-expansion-panels>
@@ -180,12 +180,15 @@
                 let id = data.id;
                 UserService.findUserById(id).then((response) => {
                     this.surplus = response.data.surplus === null ? 0 : response.data.surplus
-                    const amount = parseInt(this.surplus.toString().replace(/\D/g, ""));
-                    this.surplus =  new Intl.NumberFormat("de-DE", {
-                        style: "currency",
-                        currency: "VND"
-                    }).format(amount).replace('₫', '')
+                    this.surplus = this.formatCurrency(this.surplus)
                 })
+            },
+            formatCurrency(money) {
+                const amount = parseInt(money.toString().replace(/\D/g, ""));
+                return new Intl.NumberFormat("de-DE", {
+                    style: "currency",
+                    currency: "VND"
+                }).format(amount).replace('₫', '')
             },
             gotoListUser() {
                 this.$router.push({

@@ -43,7 +43,7 @@
                         href: '/ddt/home',
                     },
                     {
-                        title: "Thống kê theo các bài đăng được duyệt",
+                        title: "Thống kê Theo đơn hàng thanh toán thành công",
                         disabled: true,
                         color: "#1479FF",
                         href: 'list-post-month',
