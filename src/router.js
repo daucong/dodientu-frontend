@@ -24,6 +24,7 @@ import District from "./components/Categories/District"
 import Ward from "./components/Categories/Ward"
 import ReportByMonth from "./components/Report/Mounth"
 import ReportByProvice from "./components/Report/Provice"
+import ReportByCategory from "./components/Report/Category"
 import ReportByAdminDuyet from "./components/Report/AdminDuyet"
 import ReportByUserPayment from "./components/Report/UserPayment"
 
@@ -57,6 +58,7 @@ const routes = [
             {path: 'report/provice', name: 'report-provice', component: ReportByProvice},
             {path: 'report/browse', name: 'report-browse', component: ReportByAdminDuyet},
             {path: 'report/payment', name: 'report-payment', component: ReportByUserPayment},
+            {path: 'report/category', name: 'report-category', component: ReportByCategory},
         ]
     },
     {path: '/ddt/admin/postdetail/:id', name: "post-detail-admin", component: PostDetailAdmin},

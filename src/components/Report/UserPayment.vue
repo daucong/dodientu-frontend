@@ -19,9 +19,9 @@
                 <td>{{ item.dataPost.title }}</td>
                 <td>{{ item.userBan }}</td>
                 <td>{{ item.userMua }}</td>
-                <td>{{ item.dataReport[stt].createDate }}</td>
-                <td>{{ item.dataReport[stt].totalQuality }}</td>
-                <td>{{ formatCurrency(item.dataReport[stt].totalMoney) }}</td>
+                <td>{{ item.dataReport.createDate }}</td>
+                <td>{{ item.dataReport.totalQuality }}</td>
+                <td>{{ formatCurrency(item.dataReport.totalMoney) }}</td>
             </tr>
             </tbody>
         </v-table>
@@ -81,29 +81,32 @@
         methods: {
             getReport() {
                 CheckOutService.findByReportUserToPayment().then((response) => {
-                    let data = response.data;
+                    let dataReport = response.data;
 
                     let size = response.data.length
                     for (let i = 0; i < size; i++) {
-                        let postId = response.data[i].post
-                        UserService.findUserById(response.data[i].userId).then((response) => {
+                        let postId = dataReport[i].post
+                        UserService.findUserById(dataReport[i].userId).then((response) => {
                             let nameUserMua = response.data.firstName + " " + response.data.lastName
 
                             var params = {};
                             params["isDelete"] = 'false';
                             PostService.findByID(params, postId).then(response => {
                                 let dataPost = response.data
-                                UserService.findUserById(response.data.userId).then((response) => {
-                                    let nameUserBan = response.data.firstName + " " + response.data.lastName
-                                    this.reports.push({
-                                        userMua: nameUserMua,
-                                        userBan: nameUserBan,
-                                        dataReport: data,
-                                        dataPost: dataPost
-                                    })
+                                if (dataPost.id === postId) {
+                                    UserService.findUserById(dataPost.userId).then(response => {
+                                        let nameUserBan = response.data.firstName + " " + response.data.lastName
+                                        this.reports.push({
+                                            userMua: nameUserMua,
+                                            userBan: nameUserBan,
+                                            dataReport: dataReport[i],
+                                            dataPost: dataPost
+                                        })
 
-                                    console.log(this.reports)
-                                })
+                                        console.log(this.reports)
+                                    })
+                                }
+
                             })
                         })
                     }

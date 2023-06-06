@@ -42,6 +42,7 @@
                                         class="select-option"
                                         :rules="rulesDefault"
                                         :readonly="loading"
+                                        @update:modelValue=onChangeCategory
                                 ></v-select>
                             </div>
                             <div class="col-12">
@@ -500,7 +501,7 @@
                 draftStatus: false,
                 cofrimApprove: this.$t('post-form.confrim'),
                 oldStatus: "",
-                oldDate:""
+                oldDate: ""
             }
         },
         created() {
@@ -651,24 +652,25 @@
 
                 this.post.postPrice = this.post.postPrice > 0 ? this.post.postPrice : this.typePost.typePostPrice * this.activateDate * 1000
 
-
                 const value = this.post.price
 
                 let cleanedString = value.trim().replace(/,/g, '');
                 let decimalSplit = cleanedString.split('.');
                 let size = decimalSplit.length
                 let tam = ""
-                for (let i = 0;i< size ;i++){
+                for (let i = 0; i < size; i++) {
                     tam = tam + decimalSplit[i]
                 }
                 let bigDecimalValue = tam + '.00';
                 this.post.price = bigDecimalValue
-                this.post.category = {id: this.post.category},
                 PostService.add(this.post)
                     .then(response => {
                         let id = response.data.id
                         this.post = response.data
                         if (this.oldStatus === 2 && this.oldDate === "Hết hạn") {
+                            this.payPost()
+                        }
+                        if (this.oldStatus === 3 || this.oldStatus === 4 || this.oldStatus === 0) {
                             this.payPost()
                         }
                         let file = this.$refs.thumbnail.files[0];
@@ -680,6 +682,7 @@
                             ImageService.uploadImage(formData)
                                 .then(response => {
                                     this.post.thumbnail = response.data.urlFile
+                                    this.post.images = []
                                     PostService.add(this.post).then(() => {
                                     }).catch(e => {
                                         console.log(e, "error");
@@ -727,7 +730,6 @@
                             this.blockEdit = false
                             this.date = new Date()
                             daysDifference = 7
-                            this.typePost = this.post.typePost
                         }
                         if (this.post.status === 4) {
                             this.blockEdit = false
@@ -744,12 +746,14 @@
                             this.blockEdit = false
                             this.date = new Date()
                             daysDifference = 7
-                        }else {
+                        } else {
                             if (this.post.status === 2) {
                                 daysDifference = Math.round(diffTime / 1000 / 60 / 60 / 24);
                                 this.date = new Date(response.data.postDate)
                             }
                         }
+
+                        this.typePost = this.post.typePost
 
                         this.activateDate = daysDifference
                         this.getSizeImages = response.data.images.length
@@ -890,6 +894,9 @@
             unformatCurrency(value) {
                 return value.toString().replace(/,/g, "").replace(/\./g, "");
             },
+            onChangeCategory(){
+                this.post.category = {id: this.post.category}
+            }
         },
         watch: {
             date() {

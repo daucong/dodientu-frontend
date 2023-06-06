@@ -97,9 +97,10 @@
                     ></v-btn>
                 </td>
             </tr>
+            <span v-if="postList.length === 0">Không có bài đăng nào</span>
             </tbody>
         </v-table>
-                <div class="text-center">
+                <div class="text-center" v-if="postList.length !== 0">
                     <v-pagination
                             class="sdt-pagination"
                             v-model="page"

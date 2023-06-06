@@ -83,7 +83,7 @@
                            color="warning"
                            icon="fa fa-edit"
                            size="x-small"
-                           :disabled="entry.status!=2 || getActivate(entry.endDate)==this.hetHan?false:true"
+                           :disabled="entry.status===2||entry.status===1"
                            @click="handleEdit(entry.id)"
                     ></v-btn>
 
@@ -96,9 +96,10 @@
                 </td>
             </tr>
             </tbody>
+            <span v-if="postList.length === 0">Không có bài đăng nào</span>
         </v-table>
 
-        <div class="text-center">
+        <div class="text-center" v-if="postList.length !== 0">
             <v-pagination
                     class="sdt-pagination"
                     v-model="page"

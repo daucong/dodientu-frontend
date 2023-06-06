@@ -287,13 +287,11 @@
 }
 
 .v-card-itemBottom1 {
-    margin-left: -155px;
     color: red;
     cursor: pointer
 }
 
 .v-card-itemBottom2 {
-    margin-left: -155px
 }
 
 .bottomReg {
@@ -302,29 +300,24 @@
 }
 
 .itemBottomReg1 {
-    margin-left: -130px;
     color: red;
     cursor: pointer
 }
 
 .itemBottomReg2 {
-    margin-left: -130px
 }
 
 .item-reg-accept1 {
     font-size: 12px;
-    margin-left: 10px
 }
 
 .item-reg-accept2 {
     color: coral;
-    margin-left: -70px;
     font-size: 12px;
     cursor: pointer;
 }
 
 .item-reg-accept3 {
-    margin-left: -70px;
     font-size: 12px
 }
 

@@ -67,6 +67,10 @@ class PostService {
         return http.get("/dodientu/v1/post/post-by-province");
     }
 
+    countPostByCategory() {
+        return http.get("/dodientu/v1/post/post-by-category");
+    }
+
     findByReportToDuyet() {
         return http.get("/dodientu/v1/post/reportToDuyet");
     }

@@ -56,7 +56,7 @@
                         <td>{{formatCurrency(item.dataCart.totalPrice)}}</td>
                         <td>{{item.dataCart.type}}</td>
                         <td><img :src=getUrlImage(item.post.thumbnail)
-                                 class="d-block rounded" style="height: 100px"></td>
+                                 class="d-block rounded" style="height: 100px; width: 150px"></td>
                         <td><span v-if="item.dataCart.status ===0">Chờ xác nhận</span>
                             <span v-if="item.dataCart.status ===1">Đã xác nhận</span>
                             <span v-if="item.dataCart.status ===2">Đã giao hàng</span>

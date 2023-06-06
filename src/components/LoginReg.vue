@@ -7,12 +7,12 @@
                 <v-img
                         cover="false"
                         class="imgAsset"
-                        :src="require('../assets/images/logo-findhome.png')"
+                        :src="require('../assets/images/logo-dodientu.png')"
                 ></v-img>
                 <v-img
                         cover="false"
-                        class="imgFrame"
-                        :src="require('../assets/images/frame-1.png')"
+                        class="imgFrame" style="border-radius: 5px"
+                        :src="require('../assets/images/images.jpg')"
                 ></v-img>
                 <v-card-text class="txtGroup"
                 >{{ $t('login.welcome') }}
@@ -285,10 +285,9 @@
                                 </v-btn>
                             </div>
                             <div class="txt-bottom">
-                                <v-card-text>{{ $t('login.no-member') }}</v-card-text>
-                                <v-card-text class="v-card-itemBottom1">{{ $t('header.register') }}
-                                </v-card-text>
-                                <v-card-text class="v-card-itemBottom2">{{ $t('login.here') }}</v-card-text>
+                                <v-card-text>Bạn đã có tài khoản?
+                                    <span style="color: red; cursor: pointer">Đăng kí</span>
+                                    tại đây</v-card-text>
                             </div>
                         </div>
                     </v-window-item>
@@ -405,28 +404,15 @@
                                     Google
                                 </v-btn>
                             </div>
-                            <div style="display: flex">
-                                <v-card-text class="item-reg-accept1"
-                                >{{ $t('register.accept') }}
-                                </v-card-text
-                                >
-                                <v-card-text
-                                        class="item-reg-accept2"
-                                >{{ $t('register.rules') }}
-                                </v-card-text
-                                >
-                                <v-card-text class="item-reg-accept3"
-                                >{{ $t('register.of-we') }}
-                                </v-card-text
-                                >
+                            <div style="display: flex; text-align: center" class="row mr-0">
+                                <v-card-text>Bằng việc tiếp tục, bạn đồng ý với
+                                    <span style="color: red; cursor: pointer">Điều khoản sử dụng</span>
+                                    của chúng tôi</v-card-text>
                             </div>
                             <div class="bottomReg">
-                                <v-card-text>{{ $t('register.already-account') }}</v-card-text>
-                                <v-card-text
-                                        class="itemBottomReg1"
-                                >{{ $t('header.login') }}
-                                </v-card-text>
-                                <v-card-text class="itemBottomReg2"> {{ $t('login.here') }}</v-card-text>
+                                <v-card-text>Bạn đã có tài khoản?
+                                    <span style="color: red; cursor: pointer">Đăng nhập</span>
+                                    tại đây</v-card-text>
                             </div>
                         </v-card>
                     </v-window-item>
@@ -545,7 +531,7 @@
                 AuthService.createFacebookAccessToken(code)
                     .then((response) => {
                         var user = {
-                            userName: response.data.email,
+                            userName: response.data.email === null ? response.data.userName : response.data.email,
                             typeAccount: "facebook"
                         }
                         this.$store.dispatch("auth/login", user).then(
